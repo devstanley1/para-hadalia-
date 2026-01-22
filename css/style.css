@@ -1,0 +1,384 @@
+/* ==========================================
+   VARIÁVEIS E TEMA
+   ========================================== */
+:root {
+    /* TEMA ESCURO */
+    --primary-color: #ff3385;    /* Rosa Neon Vibrante */
+    --bg-color: #121212;         /* Fundo Preto Quase Total */
+    --card-bg: #1e1e1e;          /* Cinza Escuro para os cartões */
+    --text-color: #e0e0e0;       /* Texto Claro */
+    --text-muted: #a0a0a0;
+}
+
+/* ==========================================
+   RESET E BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1f0510 0%, #4a0e28 100%);
+    color: white;
+    border-bottom: 2px solid var(--primary-color);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 4px 20px rgba(255, 51, 133, 0.2);
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 51, 133, 0.5);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* ==========================================
+   CONTAINER E TÍTULOS
+   ========================================== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+    margin-top: 50px;
+    text-shadow: 0 0 5px rgba(255, 51, 133, 0.3);
+}
+
+/* ==========================================
+   CALENDÁRIO
+   ========================================== */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+.day-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(255, 51, 133, 0.4);
+}
+
+.day-number {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.day-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* ==========================================
+   CARTAS / ENVELOPES
+   ========================================== */
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.envelope {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 51, 133, 0.2);
+}
+
+.envelope-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.envelope h3 {
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.letters-description {
+    text-align: center;
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   MODAL
+   ========================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #252525;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: popIn 0.4s ease;
+    border: 1px solid #444;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.close-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+#modal-title {
+    color: var(--primary-color);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    margin: 0 0 20px 0;
+}
+
+#modal-text {
+    font-size: 1.2rem;
+    color: #ddd;
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   SEÇÃO SURPRESA (MACACO)
+   ========================================== */
+.monkey-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.surprise-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(255, 51, 133, 0.3);
+}
+
+.surprise-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #ff3385 0%, #1a0510 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8s ease;
+    z-index: 10;
+}
+
+.surprise-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: white;
+    margin-top: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+.surprise-icon {
+    font-size: 4rem;
+}
+
+.hidden-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.surprise-box.revealed .surprise-cover {
+    opacity: 0;
+    transform: scale(1.2);
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.monkey-caption {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 1s ease 0.5s;
+}
+
+.surprise-box.revealed + .monkey-caption {
+    opacity: 1;
+}
+
+/* ==========================================
+   EFEITO CHUVA DE CORAÇÕES
+   ========================================== */
+.heart-bg {
+    position: fixed;
+    top: -10vh;
+    color: var(--primary-color);
+    font-size: 2rem;
+    z-index: -1;
+    opacity: 0.3;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    header {
+        padding: 40px 15px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .day-card {
+        padding: 10px 5px;
+    }
+
+    .day-number {
+        font-size: 1.2rem;
+    }
+
+    .modal-content {
+        padding: 25px;
+    }
+
+    #modal-title {
+        font-size: 1.8rem;
+    }
+
+    #modal-text {
+        font-size: 1rem;
+    }
+
+    .surprise-box {
+        width: 250px;
+        height: 250px;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma página especial para Hadalia">
+    <meta name="theme-color" content="#ff3385">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    
+    <title>Para Hadalia 🖤</title>
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Hadalia</h1>
+        <p class="subtitle">Nosso mundo, e meu amor por você 🛐.</p>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <!-- Seção Calendário -->
+        <section aria-labelledby="calendar-title">
+            <h2 id="calendar-title">📅 Nosso Mês</h2>
+            <div class="calendar-grid" id="calendarContainer" role="grid">
+                <!-- Calendário gerado via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seção Cartas -->
+        <section aria-labelledby="letters-title">
+            <h2 id="letters-title">💌 Abra Quando...</h2>
+            <p class="letters-description">
+                (Clique várias vezes nos envelopes, as mensagens mudam!)
+            </p>
+
+            <div class="letters-grid">
+                <article class="envelope" onclick="openRandomLetter('triste', 'Quando estiver triste 😢')" role="button" tabindex="0">
+                    <span class="envelope-icon" aria-hidden="true">😢</span>
+                    <h3>Estiver triste</h3>
+                </article>
+
+                <article class="envelope" onclick="openRandomLetter('saudades', 'Quando a saudade bater ❤️')" role="button" tabindex="0">
+                    <span class="envelope-icon" aria-hidden="true">❤️</span>
+                    <h3>Sentir saudades</h3>
+                </article>
+
+                <article class="envelope" onclick="openRandomLetter('brava', 'Quando estiver brava 😡')" role="button" tabindex="0">
+                    <span class="envelope-icon" aria-hidden="true">😡</span>
+                    <h3>Estiver brava comigo</h3>
+                </article>
+
+                <article class="envelope" onclick="openRandomLetter('rir', 'Quando precisar rir 😂')" role="button" tabindex="0">
+                    <span class="envelope-icon" aria-hidden="true">😂</span>
+                    <h3>Precisar sorrir</h3>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção Surpresa -->
+        <section class="monkey-section" aria-labelledby="surprise-title">
+            <h2 id="surprise-title">Tem uma surpresa pra você... 🎁</h2>
+            
+            <div class="surprise-box" role="button" tabindex="0" aria-label="Clique para revelar a surpresa">
+                <div class="surprise-cover">
+                    <span class="surprise-icon" aria-hidden="true">🎁</span>
+                    <span class="surprise-text">Toque para abrir</span>
+                </div>
+                <img src="assets/macaco.jpg" alt="Foto fofa de macaquinho" class="hidden-img" loading="lazy">
+            </div>
+
+            <p class="monkey-caption">Eu sei que você ama macaquinhos! 🐒❤️</p>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <div class="modal-content">
+            <button class="close-btn" onclick="toggleModal(false)" aria-label="Fechar modal">&times;</button>
+            <h2 id="modal-title">Título</h2>
+            <p id="modal-text">Mensagem...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
