@@ -7,7 +7,7 @@ const letterDatabase = {
     triste: [
         "Ei, olhe para mim (virtualmente). Você é maior que qualquer problema que esteja enfrentando hoje. Respira fundo, eu to contigo.",
         "Não se esqueça que dias ruins também chegam ao fim. Amanhã é um novo dia e eu estarei lá pra te fazer sorrir.",
-        "Se o mundo estiver pesado aí, divide o peso comigo. Eu aguento. Te amo!",
+        "Se o mundo estiver pesado aí, divide o peso comigo. Eu aguento.!",
         "Você é a mulher mais forte que eu conheço. Isso é só uma fase ruim, não uma vida ruim. Ergue a cabeça, minha princesa.",
         "Você é amada. Você é importante. Você é preciosa. Nunca duvide disso, nem por um segundo.",
         "Mesmo longe, eu sou seu porto seguro. Me liga? Quero te ouvir e te fazer esquecer os problemas."
@@ -67,7 +67,7 @@ const calendarMessages = [
     // Semana 2
     "Dia 8: Quinta... A distância só me dá mais certeza de que você é a pessoa certa, saudades de você minha princesa 🛐.",
     "Dia 9: Sexta! 🍔 VALE-IFOOD: Hoje o jantar é por minha conta aí em Brasília. Escolha o que quiser que eu peço daqui!",
-    "Dia 10: Sábado. A tecnologia é boa, mas o que eu sinto por você é o que mantém a gente conectado de verdade. Te amo!",
+    "Dia 10: Sábado. A tecnologia é boa, mas o que eu sinto por você é o que mantém a gente conectado de verdade!",
     "Dia 11: Domingo. Desafio: Criar nossa playlist no Spotify juntos. Coloque músicas que te lembram de mim.",
     "Dia 12: Segunda. Você é incrível e capaz de tudo. Estou aqui para te apoiar em qualquer decisão.",
     "Dia 13: Terça. Sorte do dia: ter um garoto de programa tatuado que, mesmo longe, faz de tudo pra te ver sorrir.",
@@ -84,7 +84,7 @@ const calendarMessages = [
     "Dia 22: Quinta. A distância separa corpos, não corações. O meu tá aí com você agora. 🛐",
     "Dia 23: Já te disse hoje que sua voz é meu som favorito? Mande um áudio contando como foi seu dia.",
     "Dia 24: Sábado. Se eu pudesse me teletransportar, adivinha onde eu estaria agora? (Dica: começa com 'Bra' e termina com 'sília'. KKKKKKKK).",
-    "Dia 25: Domingo. Bom dia, meu amor. Aproveite seu domingo aí, descanse bastante. Te amo!",
+    "Dia 25: Domingo. Bom dia, meu amor. Aproveite seu domingo aí, descanse bastante!❤️",
     "Dia 26: Segunda. Mais uma semana de batalhas. Lembre-se: Você é forte, inteligente e eu sou seu fã nº 1.",
     "Dia 27: Terça. Obrigado por ser minha parceira e confiar em nós, mesmo com os quilômetros no meio.",
     "Dia 28: Quarta. Falta pouco para o mês acabar, mas minha vontade de estar perto só aumenta.",
