@@ -2,6 +2,16 @@
    VALE PRÊMIO - ESTILOS
    ========================================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
 body {
     background-color: #121212;
     color: #fff;
@@ -10,10 +20,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100%;
     min-height: 100vh;
+    min-height: 100dvh;
     margin: 0;
+    padding: 20px;
     text-align: center;
-    overflow: hidden;
 }
 
 .confetti {
@@ -26,13 +38,14 @@ body {
 
 .card {
     background: linear-gradient(135deg, #2c0e38 0%, #521868 100%);
-    padding: 40px;
+    padding: 40px 30px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
     max-width: 350px;
-    width: 90%;
+    width: 100%;
     border: 2px solid #a64ac9;
     z-index: 10;
+    margin: auto;
 }
 
 h1 {
@@ -54,17 +67,17 @@ h1 {
 }
 
 .btn {
-    background-color: #25d366; /* Cor do Zap */
+    background-color: #25d366;
     color: #fff;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: 15px 25px;
     border-radius: 50px;
     font-weight: bold;
-    font-size: 1.1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.2s;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.2s, background-color 0.2s;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
@@ -85,26 +98,20 @@ h1 {
 @media screen and (max-width: 480px) {
     body {
         padding: 15px;
-        overflow-y: auto;
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
     }
 
     .card {
-        padding: 25px 20px;
-        max-width: 100%;
-        width: 100%;
+        padding: 30px 20px;
         border-radius: 15px;
-        margin: auto;
     }
 
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
         margin-bottom: 8px;
     }
 
     .acai-icon {
-        font-size: 3.5rem;
+        font-size: 4rem;
         margin: 15px 0;
     }
 
@@ -116,10 +123,6 @@ h1 {
     .btn {
         padding: 14px 20px;
         font-size: 0.95rem;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        line-height: 1.4;
     }
 }
 
@@ -129,26 +132,26 @@ h1 {
     }
 
     .card {
-        padding: 20px 15px;
+        padding: 25px 15px;
     }
 
     h1 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .acai-icon {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
         margin: 12px 0;
     }
 
     .desc {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         margin-bottom: 15px;
     }
 
     .btn {
         padding: 12px 15px;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
 
