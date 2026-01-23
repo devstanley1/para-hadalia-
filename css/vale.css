@@ -78,3 +78,65 @@ h1 {
         transform: translateY(100vh) rotate(720deg);
     }
 }
+
+/* ==========================================
+   RESPONSIVIDADE - MOBILE
+   ========================================== */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 15px;
+        overflow-y: auto;
+    }
+
+    .card {
+        padding: 25px 20px;
+        max-width: 100%;
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+
+    .acai-icon {
+        font-size: 3.5rem;
+        margin: 15px 0;
+    }
+
+    .desc {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .card {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .acai-icon {
+        font-size: 3rem;
+    }
+
+    .desc {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+}
