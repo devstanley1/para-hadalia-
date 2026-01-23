@@ -10,7 +10,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     
-    <title>Para Hadalia 🛐</title>
+    <title>Para Hadalia 🖤</title>
     
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -33,9 +33,6 @@
         <!-- Seção Calendário -->
         <section aria-labelledby="calendar-title">
             <h2 id="calendar-title">📅 Nosso Mês</h2>
-             <p class="letters-description">
-                (clique nos dias!)
-            </p>
             <div class="calendar-grid" id="calendarContainer" role="grid">
                 <!-- Calendário gerado via JavaScript -->
             </div>
@@ -71,8 +68,8 @@
             </div>
         </section>
 
-        <!-- Seção Surpresa 
-        <section class="monkey-section" aria-labelledby="surprise-title">
+        <!-- Seção Surpresa -->
+        <!--section class="monkey-section" aria-labelledby="surprise-title">
             <h2 id="surprise-title">Tem uma surpresa pra você... 🎁</h2>
             
             <div class="surprise-box" role="button" tabindex="0" aria-label="Clique para revelar a surpresa">
@@ -84,7 +81,25 @@
             </div>
 
             <p class="monkey-caption">Eu sei que você ama macaquinhos! 🐒❤️</p>
-        </section -->
+        </section-->
+        <div style="text-align: center; margin-top: 80px; padding: 40px; background: #1a1a1a; border-radius: 20px; border: 1px dashed #555;">
+    
+    <h2 style="font-family: 'Dancing Script'; color: #ffd700; margin-bottom: 10px;">Sorteio do Amor 🎰</h2>
+    <p style="color: #aaa; margin-bottom: 20px;">Escaneie ou toque no código abaixo para ver se você ganhou algo...</p>
+    
+    <a href="pages/vale.html" style="text-decoration: none;">
+        <img 
+            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Parabens!%20Voce%20ganhou%20um%20Vale%20Acai.%20Toque%20na%20imagem%20para%20resgatar&color=ff3385&bgcolor=121212" 
+            alt="QR Code Premiado" 
+            style="border: 4px solid #ff3385; border-radius: 10px; padding: 10px; transition: transform 0.3s;"
+            onmouseover="this.style.transform='scale(1.1)'"
+            onmouseout="this.style.transform='scale(1)'"
+        >
+    </a>
+    
+    <p style="margin-top: 15px; font-size: 0.9rem; color: #ff3385;">(Toque para revelar o prêmio)</p>
+
+</div>
     </main>
 
     <!-- Modal -->
@@ -97,7 +112,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
