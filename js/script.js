@@ -264,4 +264,16 @@ document.addEventListener('DOMContentLoaded', () => {
             revealSurprise(this);
         };
     }
+
+
+    function revealPrize(element) {
+    // Adiciona a classe que faz a cobertura ficar transparente
+    element.classList.add('scratched');
+    
+    // Solta os corações (já usamos essa função no site principal, então reaproveitamos!)
+    // Se quiser mais corações, pode chamar várias vezes
+    createHearts();
+    setTimeout(createHearts, 300);
+    setTimeout(createHearts, 600);
+}
 });

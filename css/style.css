@@ -382,6 +382,134 @@ h2 {
         height: 250px;
     }
 
+/* Container Geral da Seção */
+.scratch-section {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+    position: relative;
+}
 
+.scratch-title {
+    font-family: 'Dancing Script', cursive; 
+    color: #ffd700; 
+    margin-bottom: 20px; 
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    font-size: 2.5rem;
+}
+
+/* O Cartão da Raspadinha */
+.scratch-card-container {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden; /* Garante que nada saia do quadrado */
+    box-shadow: 0 0 25px rgba(255, 51, 133, 0.4); /* Brilho rosa */
+    border: 2px solid #444;
+}
+
+/* Estilo do Prêmio (Fica no Fundo) */
+.prize {
+    width: 100%; 
+    height: 100%;
+    /* Gradiente Roxo Escuro */
+    background: radial-gradient(circle, #2c0e38 0%, #000000 100%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1; /* Fica atrás da cobertura */
+}
+
+.prize-icon {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.prize h3 {
+    color: #ffd700;
+    margin: 5px 0;
+    font-size: 1.5rem;
+}
+
+.prize p {
+    font-size: 0.9rem;
+    margin: 2px 0;
+    color: #eee;
+}
+
+.prize-subtitle {
+    font-weight: bold;
+    color: #ff3385 !important;
+    margin-top: 5px !important;
+}
+
+/* Botão de Cobrar no Zap */
+.claim-btn {
+    margin-top: 15px;
+    background: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    transition: transform 0.2s;
+}
+
+.claim-btn:hover {
+    transform: scale(1.05);
+    background: #1ebe57;
+}
+
+/* Estilo da Cobertura (Prateada) */
+.scratch-cover {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%;
+    /* Efeito de metal prateado */
+    background: linear-gradient(135deg, #999 0%, #e0e0e0 50%, #999 100%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-weight: bold;
+    z-index: 2; /* Fica NA FRENTE do prêmio */
+    cursor: pointer;
+    transition: all 1s ease; /* Animação suave de sumir */
+}
+
+.cover-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: bounce 1.5s infinite;
+}
+
+.scratch-footer {
+    color: #777;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+/* Animação do dedinho apontando */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Classe que será adicionada pelo JS para sumir com a cobertura */
+.scratched {
+    opacity: 0;
+    transform: scale(1.1); /* Aumenta um pouco enquanto some */
+    pointer-events: none; /* Impede clicar de novo */
+}
 }
 
