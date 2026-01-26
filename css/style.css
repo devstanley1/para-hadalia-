@@ -487,6 +487,24 @@ h2 {
     z-index: 2; /* Fica NA FRENTE do prêmio */
     cursor: pointer;
     transition: all 1s ease; /* Animação suave de sumir */
+    overflow: hidden;
+}
+
+.scratch-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+    background-size: 16px 16px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.scratch-cover > * {
+    position: relative;
+    z-index: 1;
 }
 
 .cover-icon {
