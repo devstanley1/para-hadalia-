@@ -382,6 +382,8 @@ h2 {
         height: 250px;
     }
 
+}
+
 /* Container Geral da Seção */
 .scratch-section {
     text-align: center;
@@ -510,6 +512,5 @@ h2 {
     opacity: 0;
     transform: scale(1.1); /* Aumenta um pouco enquanto some */
     pointer-events: none; /* Impede clicar de novo */
-}
 }
 
