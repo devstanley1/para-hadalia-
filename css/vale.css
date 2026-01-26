@@ -1,6 +1,6 @@
 /* ==========================================
    VALE PRÊMIO - ESTILOS
-   ========================================== */
+   ========================================== 
 
 * {
     margin: 0;
@@ -94,7 +94,7 @@ h1 {
 
 /* ==========================================
    RESPONSIVIDADE - MOBILE
-   ========================================== */
+   ========================================== 
 @media screen and (max-width: 480px) {
     body {
         padding: 15px;
@@ -155,7 +155,7 @@ h1 {
     }
 }
 
-/* Ajuste para telas muito pequenas em altura (landscape) */
+/* Ajuste para telas muito pequenas em altura (landscape) 
 @media screen and (max-height: 500px) {
     body {
         padding: 10px;
