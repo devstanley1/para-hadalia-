@@ -276,4 +276,57 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(createHearts, 300);
     setTimeout(createHearts, 600);
 }
+
+// Função para pegar a data atual (Dia/Mês/Ano)
+function getTodayDate() {
+    const today = new Date();
+    return today.toLocaleDateString('pt-BR');
+}
+
+// Passo 1: Mostra o campo para ela digitar
+function showSignatureInput() {
+    document.getElementById('phase1-intro').style.display = 'none';
+    document.getElementById('phase2-input').style.display = 'block';
+    
+    // Foca o cursor no campo automaticamente
+    setTimeout(() => document.getElementById('signature-field').focus(), 100);
+}
+
+// Passo 2: Gera a certidão
+function generateCertificate() {
+    const inputField = document.getElementById('signature-field');
+    const signatureName = inputField.value.trim();
+
+    // Validação simples: Se não digitou nada, avisa
+    if (signatureName === "") {
+        alert("Por favor, assine seu nome para continuarmos! ❤️");
+        inputField.focus();
+        return;
+    }
+
+    // Preenche os dados na certidão
+    document.getElementById('final-signature').innerText = signatureName;
+    document.getElementById('current-date').innerText = getTodayDate();
+
+    // Troca as telas
+    document.getElementById('phase2-input').style.display = 'none';
+    const certDiv = document.getElementById('phase3-certificate');
+    certDiv.style.display = 'block';
+
+    // Animação de entrada suave
+    certDiv.style.opacity = 0;
+    let fadeEffect = setInterval(function () {
+        if (!certDiv.style.opacity) { certDiv.style.opacity = 0; }
+        if (certDiv.style.opacity < 1) {
+            certDiv.style.opacity = parseFloat(certDiv.style.opacity) + 0.1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 50);
+
+    // Chama a função de corações (se você já tiver no site)
+    createHearts();
+    setTimeout(createHearts, 500);
+}
+
 });
