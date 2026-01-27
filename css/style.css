@@ -541,6 +541,28 @@ h2 {
     margin-top: 20px;
 }
 
+.love-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff3385 0%, #ff6fb1 100%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(255, 51, 133, 0.35);
+    border: 1px solid rgba(255, 51, 133, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.love-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(255, 51, 133, 0.45);
+    filter: brightness(1.05);
+}
+
 /* Animação do dedinho apontando */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -552,6 +574,7 @@ h2 {
     opacity: 0;
     transform: scale(1.1); /* Aumenta um pouco enquanto some */
     pointer-events: none; /* Impede clicar de novo */
+}
 
 
 /* Container Escuro da Seção */
@@ -678,6 +701,4 @@ h2 {
 }
 
 @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; } 100% { opacity: 0.8; } }
-
-}
 
