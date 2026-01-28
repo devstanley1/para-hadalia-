@@ -62,9 +62,11 @@ header {
     justify-content: center;
 }
 
-.hello-kitty-embed .tenor-gif-embed {
-    width: 100% !important;
+.hello-kitty-embed img {
+    width: 100%;
     max-width: 140px;
+    height: auto;
+    display: block;
 }
 
 .hello-kitty-row {
@@ -95,7 +97,7 @@ h1 {
         width: 110px;
     }
 
-    .hello-kitty-embed .tenor-gif-embed {
+    .hello-kitty-embed img {
         max-width: 110px;
     }
 }
