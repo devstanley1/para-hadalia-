@@ -36,17 +36,34 @@ body {
     animation: fall linear infinite;
 }
 
-.card {
-    background: linear-gradient(135deg, #2c0e38 0%, #521868 100%);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
-    max-width: 350px;
-    width: 100%;
-    border: 2px solid #a64ac9;
-    z-index: 10;
-    margin: auto;
-}
+    .card {
+        background: linear-gradient(135deg, #2c0e38 0%, #521868 100%);
+        padding: 40px 30px;
+        border-radius: 28px;
+        box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+        max-width: 370px;
+        width: 100%;
+        border: 2px solid #a64ac9;
+        z-index: 10;
+        margin: auto;
+        transition: border-radius 0.2s;
+    }
+
+    .desc {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.5;
+        background: rgba(40, 10, 60, 0.7);
+        border-radius: 22px;
+        padding: 18px 12px;
+        box-shadow: 0 2px 10px rgba(82, 24, 104, 0.15);
+        transition: border-radius 0.2s;
+    }
+
+    .btn, .acai-icon, .card, .desc {
+        border-radius: 22px !important;
+    }
+
 
 h1 {
     color: #f2d74e;
@@ -97,32 +114,31 @@ h1 {
    ========================================== */
 @media screen and (max-width: 480px) {
     body {
-        padding: 15px;
+        padding: 10px;
     }
-
     .card {
-        padding: 30px 20px;
-        border-radius: 15px;
+        padding: 18px 6px;
+        border-radius: 18px;
     }
-
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         margin-bottom: 8px;
     }
-
     .acai-icon {
-        font-size: 4rem;
-        margin: 15px 0;
+        font-size: 3.2rem;
+        margin: 10px 0;
+        border-radius: 18px;
     }
-
     .desc {
-        font-size: 1rem;
-        margin-bottom: 20px;
+        font-size: 0.98rem;
+        margin-bottom: 16px;
+        border-radius: 16px;
+        padding: 10px 6px;
     }
-
     .btn {
-        padding: 14px 20px;
-        font-size: 0.95rem;
+        padding: 12px 10px;
+        font-size: 0.93rem;
+        border-radius: 16px;
     }
 }
 
