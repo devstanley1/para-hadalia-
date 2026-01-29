@@ -824,10 +824,6 @@ h2 {
     gap: 30px;
     margin-bottom: 40px;
     text-align: left;
-    background: var(--card-bg);
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-    padding: 32px 24px;
 }
 
 .main-story h2 {
