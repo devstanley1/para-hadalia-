@@ -767,3 +767,109 @@ h2 {
 
 @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; } 100% { opacity: 0.8; } }
 
+
+/* Portal de Notícias */
+.news-portal {
+    background-color: #f6f6f6; /* Fundo cinza claro estilo jornal */
+    color: #333;
+    padding-bottom: 50px;
+}
+
+/* Breaking News Bar */
+.breaking-news {
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.breaking-news .badge {
+    background: #cc0000;
+    padding: 5px 15px;
+    margin: 0 15px;
+    font-size: 0.8rem;
+}
+
+/* Header */
+.portal-logo {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: -2px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.portal-logo span {
+    color: #cc0000;
+}
+
+.date-line {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    margin: 10px 0 30px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Layout Matéria Principal */
+.main-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.main-story h2 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+.category {
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.author {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+}
+
+.story-img img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Grade de Notícias */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.news-item h3 {
+    font-size: 1.3rem;
+    margin: 5px 0;
+}
+
+.news-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .main-story { grid-template-columns: 1fr; }
+}

@@ -331,3 +331,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+ // Atualiza a data do jornal para o dia atual
+function updateNewsDate() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateStr = now.toLocaleDateString('pt-BR', options);
+    
+    // Deixa a primeira letra maiúscula
+    const formattedDate = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+    
+    document.getElementById('news-date').innerText = formattedDate;
+}
+
+// Chame esta função ao carregar a página
+updateNewsDate();
