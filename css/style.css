@@ -907,3 +907,65 @@ h2 {
 @media (max-width: 768px) {
     .main-story { grid-template-columns: 1fr; }
 }
+
+.photo-frame-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1a1a1a; /* Fundo escuro para destacar o dourado */
+}
+
+.photo-title {
+    font-family: 'Dancing Script', cursive;
+    color: #ffd700;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Moldura Externa (Ouro) */
+.digital-frame {
+    position: relative;
+    display: inline-block;
+    padding: 15px; /* Largura da moldura dourada */
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 10px rgba(0,0,0,0.3);
+    max-width: 90%;
+    transition: transform 0.3s ease;
+}
+
+.digital-frame:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+/* Borda Interna Branca (Passe-partout) */
+.inner-border {
+    background-color: #fff;
+    padding: 15px; /* Espaço branco entre a foto e a moldura */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    display: flex;
+}
+
+.couple-photo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Filtro leve para deixar a foto mais "quente" e romântica */
+    filter: sepia(0.1) contrast(1.1); 
+}
+
+/* Efeito de reflexo de vidro sobre a foto */
+.frame-shine {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none; /* Permite clicar na foto por baixo do brilho */
+    border-radius: 10px;
+}
+
+.photo-caption {
+    margin-top: 20px;
+    color: #888;
+    font-style: italic;
+    font-size: 1.1rem;
+}
