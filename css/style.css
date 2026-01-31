@@ -969,3 +969,64 @@ h2 {
     font-style: italic;
     font-size: 1.1rem;
 }
+.rest-section {
+    padding: 80px 20px;
+    background: #0a0a0a; /* Fundo preto profundo */
+    text-align: center;
+}
+
+.relax-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(30, 30, 30, 0.6); /* Transparência dark */
+    border: 1px solid #ff3385; /* Borda rosa neon fina */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(255, 51, 133, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header-relax .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.relax-box h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff3385;
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+}
+
+.letter-content {
+    text-align: left;
+    color: #d1d1d1;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.letter-content p {
+    margin-bottom: 18px;
+}
+
+.letter-content strong {
+    color: #ffd700; /* Destaque em dourado para as partes importantes */
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    text-align: right;
+    color: #ff3385;
+    margin-top: 35px;
+}
+
+.relax-footer {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 51, 133, 0.2);
+    font-style: italic;
+    color: #888;
+}
