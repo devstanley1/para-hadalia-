@@ -44,6 +44,24 @@
 
     <!-- Conteúdo Principal -->
     <main class="container">
+
+        <div class="our-day-wrapper">
+            <div class="our-day-card">
+                <div class="shine-effect"></div>
+                <span class="heart-top">❤️</span>
+                <h3 class="our-day-title">Nosso Dia</h3>
+                <div class="date-container">
+                    <span class="day-digit">02</span>
+                    <span class="separator">/</span>
+                    <span class="month-digit">02</span>
+                    <span class="separator">/</span>
+                    <span class="year-digit">2026</span>
+                </div>
+                <p class="anniversary-note">O início da nossa eternidade</p>
+            </div>
+        </div>
+
+
         <!-- Seção Calendário -->
         <section aria-labelledby="calendar-title">
             <h2 id="calendar-title">📅 Nosso Mês</h2>
@@ -84,7 +102,7 @@
                     <h3>Precisar sorrir</h3>
                 </article>
             </div>
-        </section> 
+        </section>
 
         <div class="hello-kitty-row" aria-hidden="true">
             <div class="hello-kitty-embed">
@@ -92,271 +110,337 @@
             </div>
         </div>
 
-<!-- SEÇÃO DO PEDIDO DE NAMORO -->
-<section class="proposal-section" id="pedido">
-    <div class="proposal-container">
-        <div id="proposal-content">
-            <span class="proposal-icon">❤️</span>
-            <h2 class="proposal-title">Hadalia, tenho uma pergunta importante pra te fazer ...</h2>
-            
-            <div class="proposal-text-container">
-                <p class="proposal-text">
-                    Dizem que a distância separa as pessoas, mas com nos ela só provou que não importa onde estejamos no mapa, o meu pensamento termina sempre em ti.
-                </p>
-                <p class="proposal-text">
-                    Entre Brasília e Teresina, construímos um mundo só nosso, saudades que apertam o peito e a certeza absoluta de que cada quilómetro vale a pena só para ouvir a tua voz.
-                </p>
-                <p class="proposal-text">
-                    Não quero ser apenas alguém que passa pela tua vida. Quero ser o teu abrigo, o teu apoio nos dias de cansaço e o motivo do teu sorriso mais sincero. Quero construir um futuro onde a distância seja apenas uma memória distante.
-                </p>
+        <!-- SEÇÃO DO PEDIDO DE NAMORO -->
+        <section class="proposal-section" id="pedido">
+            <div class="proposal-container">
+                <div id="proposal-content">
+                    <span class="proposal-icon">❤️</span>
+                    <h2 class="proposal-title">Hadalia, tenho uma pergunta importante pra te fazer ...</h2>
+
+                    <div class="proposal-text-container">
+                        <p class="proposal-text">
+                            Dizem que a distância separa as pessoas, mas com nos ela só provou que não importa onde
+                            estejamos no mapa, o meu pensamento termina sempre em ti.
+                        </p>
+                        <p class="proposal-text">
+                            Entre Brasília e Teresina, construímos um mundo só nosso, saudades que apertam o peito e a
+                            certeza absoluta de que cada quilómetro vale a pena só para ouvir a tua voz.
+                        </p>
+                        <p class="proposal-text">
+                            Não quero ser apenas alguém que passa pela tua vida. Quero ser o teu abrigo, o teu apoio nos
+                            dias de cansaço e o motivo do teu sorriso mais sincero. Quero construir um futuro onde a
+                            distância seja apenas uma memória distante.
+                        </p>
+                    </div>
+
+                    <p class="proposal-question">Hadalia, aceita ser a minha princesa para sempre? Quer namorar comigo?
+                    </p>
+
+                    <div class="proposal-buttons">
+                        <button id="btn-sim" onclick="acceptProposal()">SIM, mil vezes sim! ❤️</button>
+                        <button id="btn-nao" onmouseover="fleeButton()" onclick="fleeButton()">Não</button>
+                    </div>
+                </div>
+
+                <!-- Mensagem de Sucesso (Escondida) -->
+                <div id="success-message" style="display: none;">
+                    <div class="celebration-content">
+                        <h1 class="celebration-title">O nosso "Para Sempre" começa hoje! 💍</h1>
+                        <p class="celebration-text">Obrigado por me escolheres, Hadalia. Prometo cuidar do teu coração
+                            como o tesouro mais valioso que o universo me deu.</p>
+                        <div class="celebration-emoji">👩‍❤️‍👨✨🌌</div>
+                        <div class="final-note">Prepara o coração, meu amor. O nosso encontro em Brasília vai ser o dia
+                            mais feliz da minha vida.</div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <p class="proposal-question">Hadalia, aceita ser a minha princesa para sempre? Quer namorar comigo?</p>
-
-            <div class="proposal-buttons">
-                <button id="btn-sim" onclick="acceptProposal()">SIM, mil vezes sim! ❤️</button>
-                <button id="btn-nao" onmouseover="fleeButton()" onclick="fleeButton()">Não</button>
-            </div>
-        </div>
-
-        <!-- Mensagem de Sucesso (Escondida) -->
-        <div id="success-message" style="display: none;">
-            <div class="celebration-content">
-                <h1 class="celebration-title">O nosso "Para Sempre" começa hoje! 💍</h1>
-                <p class="celebration-text">Obrigado por me escolheres, Hadalia. Prometo cuidar do teu coração como o tesouro mais valioso que o universo me deu.</p>
-                <div class="celebration-emoji">👩‍❤️‍👨✨🌌</div>
-                <div class="final-note">Prepara o coração, meu amor. O nosso encontro em Brasília vai ser o dia mais feliz da minha vida.</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .proposal-section {
-        padding: 100px 20px;
-        background: radial-gradient(circle at center, #1a0510 0%, #000 100%);
-        text-align: center;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Nunito', sans-serif;
-    }
-
-    .proposal-container {
-        max-width: 700px;
-        width: 100%;
-        padding: 40px;
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 30px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 51, 133, 0.2);
-    }
-
-    .proposal-icon { font-size: 3.5rem; display: block; margin-bottom: 25px; animation: heartbeat 1.5s infinite; }
-
-    @keyframes heartbeat {
-        0% { transform: scale(1); }
-        15% { transform: scale(1.2); }
-        30% { transform: scale(1); }
-        45% { transform: scale(1.15); }
-        60% { transform: scale(1); }
-    }
-
-    .proposal-title {
-        font-family: 'Dancing Script', cursive;
-        font-size: 3rem;
-        color: #ffd700;
-        margin-bottom: 30px;
-        line-height: 1.2;
-    }
-
-    .proposal-text-container {
-        margin-bottom: 40px;
-    }
-
-    .proposal-text {
-        color: #e0e0e0;
-        font-size: 1.15rem;
-        line-height: 1.8;
-        margin-bottom: 20px;
-        font-weight: 300;
-    }
-
-    .proposal-question {
-        font-size: 1.8rem;
-        font-weight: 800;
-        color: #ff3385;
-        margin-bottom: 50px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-shadow: 0 0 15px rgba(255, 51, 133, 0.5);
-    }
-
-    /* Botões */
-    .proposal-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        position: relative;
-        min-height: 80px;
-        align-items: center;
-    }
-
-    #btn-sim {
-        padding: 18px 45px;
-        font-size: 1.3rem;
-        background: linear-gradient(45deg, #25d366, #1db954);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: bold;
-        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        z-index: 10;
-    }
-
-    #btn-sim:hover {
-        transform: scale(1.1);
-        box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-    }
-
-    #btn-nao {
-        padding: 12px 30px;
-        font-size: 1rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #999;
-        border: 1px solid #444;
-        border-radius: 50px;
-        cursor: pointer;
-        position: absolute;
-        transition: all 0.2s ease;
-        left: 65%;
-    }
-
-    /* Sucesso */
-    .celebration-content {
-        animation: fadeIn 1.5s ease-out;
-    }
-
-    .celebration-title {
-        font-family: 'Dancing Script', cursive;
-        font-size: 4rem;
-        color: #ffd700;
-        margin-bottom: 25px;
-        text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    }
-
-    .celebration-text {
-        font-size: 1.3rem;
-        color: #fff;
-        line-height: 1.6;
-    }
-
-    .celebration-emoji { font-size: 5rem; margin: 30px 0; animation: bounce 2s infinite; }
-
-    .final-note {
-        font-style: italic;
-        color: #ff3385;
-        font-size: 1.1rem;
-        margin-top: 30px;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-    }
-
-    @media (max-width: 600px) {
-        .proposal-title { font-size: 2.2rem; }
-        .proposal-question { font-size: 1.4rem; }
-        .celebration-title { font-size: 2.5rem; }
-        .proposal-buttons { flex-direction: column; gap: 20px; }
-        #btn-nao { position: relative; left: 0; }
-    }
-</style>
-
-<script>
-    function fleeButton() {
-        const btnNao = document.getElementById('btn-nao');
-        const padding = 50;
-        
-        // Mantém o botão dentro dos limites da janela, com margem
-        const maxX = window.innerWidth - btnNao.offsetWidth - padding;
-        const maxY = window.innerHeight - btnNao.offsetHeight - padding;
-        
-        const x = Math.max(padding, Math.random() * maxX);
-        const y = Math.max(padding, Math.random() * maxY);
-        
-        btnNao.style.position = 'fixed';
-        btnNao.style.left = x + 'px';
-        btnNao.style.top = y + 'px';
-        btnNao.style.zIndex = '9999';
-    }
-
-    function acceptProposal() {
-        document.getElementById('proposal-content').style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
-        
-        // Efeito de celebração intenso
-        if (typeof createHearts === 'function') {
-            for(let i=0; i<100; i++) {
-                setTimeout(createHearts, i * 50);
+        <style>
+            .proposal-section {
+                padding: 100px 20px;
+                background: radial-gradient(circle at center, #1a0510 0%, #000 100%);
+                text-align: center;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Nunito', sans-serif;
             }
-        }
-        
-        // Scroll suave para o topo do resultado
-        window.scrollTo({
-            top: document.getElementById('pedido').offsetTop,
-            behavior: 'smooth'
-        });
-    }
-</script>
-<section class="rest-section">
-    <div class="relax-box">
-        <div class="header-relax">
-            <span class="icon">✨</span>
-            <h2>Para quando o dia for pesado</h2>
-        </div>
-        
-        <div class="letter-content">
-            <p>Hadalia, meu amor...</p>
-            <p>Eu sei que a rotina esta exaustiva. Sei que as horas parecem não passar.</p>
-            <p>Escrevi este espaço para ser o seu <strong>refúgio particular</strong>. Toda vez que você sentir que a paciência está no limite ou que o cansaço venceu o sorriso, quero que venha aqui e lembre-se de uma coisa:</p>
-            <p>Eu tenho um orgulho imenso da mulher batalhadora que você é. Admiro a sua força para encarar o público e a dedicação que você esta colocando nesse trabalhho, mesmo quando está exausta.</p>
-            <p>Sempre que o expediente acabar, deixe o peso do mundo lá fora. Aqui, você não precisa ser forte o tempo todo. Aqui, você é apenas a mulher que eu amo, e o meu maior desejo é que você encontre paz e descanso nos meus braços — mesmo que agora seja através de uma tela.</p>
-            <p>Respire fundo. O trabalho é apenas uma parte da sua vida, mas você é o mundo inteiro para mim.</p>
-            <p class="signature">Com todo o meu amor e admiração,<br>Stanley</p>
-        </div>
 
-        <div class="relax-footer">
-            <p>Lembrete: To com muita SAUDADESSSSSS😭. ✨</p>
-        </div>
-    </div>
-</section>
+            .proposal-container {
+                max-width: 700px;
+                width: 100%;
+                padding: 40px;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 30px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 51, 133, 0.2);
+            }
 
-<section class="photo-frame-section">
-    <h2 class="photo-title">te amo minha princesa❤️🛐</h2>
-    
-    <div class="digital-frame">
-        <div class="inner-border">
-            <img src="assets/hadalia e eu.png" alt="Stanley e Hadalia" class="couple-photo">
-        </div>
-        <div class="frame-shine"></div>
-    </div>
-    
-    <p class="photo-caption">FOTO REAL, NÃO É IA.</p>
-</section>
+            .proposal-icon {
+                font-size: 3.5rem;
+                display: block;
+                margin-bottom: 25px;
+                animation: heartbeat 1.5s infinite;
+            }
+
+            @keyframes heartbeat {
+                0% {
+                    transform: scale(1);
+                }
+
+                15% {
+                    transform: scale(1.2);
+                }
+
+                30% {
+                    transform: scale(1);
+                }
+
+                45% {
+                    transform: scale(1.15);
+                }
+
+                60% {
+                    transform: scale(1);
+                }
+            }
+
+            .proposal-title {
+                font-family: 'Dancing Script', cursive;
+                font-size: 3rem;
+                color: #ffd700;
+                margin-bottom: 30px;
+                line-height: 1.2;
+            }
+
+            .proposal-text-container {
+                margin-bottom: 40px;
+            }
+
+            .proposal-text {
+                color: #e0e0e0;
+                font-size: 1.15rem;
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-weight: 300;
+            }
+
+            .proposal-question {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: #ff3385;
+                margin-bottom: 50px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-shadow: 0 0 15px rgba(255, 51, 133, 0.5);
+            }
+
+            /* Botões */
+            .proposal-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                position: relative;
+                min-height: 80px;
+                align-items: center;
+            }
+
+            #btn-sim {
+                padding: 18px 45px;
+                font-size: 1.3rem;
+                background: linear-gradient(45deg, #25d366, #1db954);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                font-weight: bold;
+                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+                transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                z-index: 10;
+            }
+
+            #btn-sim:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+            }
+
+            #btn-nao {
+                padding: 12px 30px;
+                font-size: 1rem;
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #999;
+                border: 1px solid #444;
+                border-radius: 50px;
+                cursor: pointer;
+                position: absolute;
+                transition: all 0.2s ease;
+                left: 65%;
+            }
+
+            /* Sucesso */
+            .celebration-content {
+                animation: fadeIn 1.5s ease-out;
+            }
+
+            .celebration-title {
+                font-family: 'Dancing Script', cursive;
+                font-size: 4rem;
+                color: #ffd700;
+                margin-bottom: 25px;
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            }
+
+            .celebration-text {
+                font-size: 1.3rem;
+                color: #fff;
+                line-height: 1.6;
+            }
+
+            .celebration-emoji {
+                font-size: 5rem;
+                margin: 30px 0;
+                animation: bounce 2s infinite;
+            }
+
+            .final-note {
+                font-style: italic;
+                color: #ff3385;
+                font-size: 1.1rem;
+                margin-top: 30px;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes bounce {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .proposal-title {
+                    font-size: 2.2rem;
+                }
+
+                .proposal-question {
+                    font-size: 1.4rem;
+                }
+
+                .celebration-title {
+                    font-size: 2.5rem;
+                }
+
+                .proposal-buttons {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                #btn-nao {
+                    position: relative;
+                    left: 0;
+                }
+            }
+        </style>
+
+        <script>
+            function fleeButton() {
+                const btnNao = document.getElementById('btn-nao');
+                const padding = 50;
+
+                // Mantém o botão dentro dos limites da janela, com margem
+                const maxX = window.innerWidth - btnNao.offsetWidth - padding;
+                const maxY = window.innerHeight - btnNao.offsetHeight - padding;
+
+                const x = Math.max(padding, Math.random() * maxX);
+                const y = Math.max(padding, Math.random() * maxY);
+
+                btnNao.style.position = 'fixed';
+                btnNao.style.left = x + 'px';
+                btnNao.style.top = y + 'px';
+                btnNao.style.zIndex = '9999';
+            }
+
+            function acceptProposal() {
+                document.getElementById('proposal-content').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+
+                // Efeito de celebração intenso
+                if (typeof createHearts === 'function') {
+                    for (let i = 0; i < 100; i++) {
+                        setTimeout(createHearts, i * 50);
+                    }
+                }
+
+                // Scroll suave para o topo do resultado
+                window.scrollTo({
+                    top: document.getElementById('pedido').offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        </script>
+        <section class="rest-section">
+            <div class="relax-box">
+                <div class="header-relax">
+                    <span class="icon">✨</span>
+                    <h2>Para quando o dia for pesado</h2>
+                </div>
+
+                <div class="letter-content">
+                    <p>Hadalia, meu amor...</p>
+                    <p>Eu sei que a rotina esta exaustiva. Sei que as horas parecem não passar.</p>
+                    <p>Escrevi este espaço para ser o seu <strong>refúgio particular</strong>. Toda vez que você sentir
+                        que a paciência está no limite ou que o cansaço venceu o sorriso, quero que venha aqui e
+                        lembre-se de uma coisa:</p>
+                    <p>Eu tenho um orgulho imenso da mulher batalhadora que você é. Admiro a sua força para encarar o
+                        público e a dedicação que você esta colocando nesse trabalhho, mesmo quando está exausta.</p>
+                    <p>Sempre que o expediente acabar, deixe o peso do mundo lá fora. Aqui, você não precisa ser forte o
+                        tempo todo. Aqui, você é apenas a mulher que eu amo, e o meu maior desejo é que você encontre
+                        paz e descanso nos meus braços — mesmo que agora seja através de uma tela.</p>
+                    <p>Respire fundo. O trabalho é apenas uma parte da sua vida, mas você é o mundo inteiro para mim.
+                    </p>
+                    <p class="signature">Com todo o meu amor e admiração,<br>Stanley</p>
+                </div>
+
+                <div class="relax-footer">
+                    <p>Lembrete: To com muita SAUDADESSSSSS😭. ✨</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-frame-section">
+            <h2 class="photo-title">te amo minha princesa❤️🛐</h2>
+
+            <div class="digital-frame">
+                <div class="inner-border">
+                    <img src="assets/hadalia e eu.png" alt="Stanley e Hadalia" class="couple-photo">
+                </div>
+                <div class="frame-shine"></div>
+            </div>
+
+            <p class="photo-caption">FOTO REAL, NÃO É IA.</p>
+        </section>
         <!-- Seção Surpresa -->
         <section class="monkey-section" aria-labelledby="surprise-title">
             <h2 id="surprise-title">Tem uma surpresa pra você... 🎁</h2>
-            
+
             <div class="surprise-box" role="button" tabindex="0" aria-label="Clique para revelar a surpresa">
                 <div class="surprise-cover">
                     <span class="surprise-icon" aria-hidden="true">🎁</span>
@@ -367,7 +451,7 @@
 
             <p class="monkey-caption">Eu sei que você ama macaquinhos! 🐒❤️</p>
         </section>
-       <!--- <div
+        <!--- <div
             style="text-align: center; margin-top: 80px; padding: 40px; background: #1a1a1a; border-radius: 20px; border: 1px dashed #555;">
 
             <h2 style="font-family: 'Dancing Script'; color: #ffd700; margin-bottom: 10px;">Sorteio do Amor 🎰</h2>
@@ -385,157 +469,186 @@
 
         </div-->
 
-<div class="scratch-section">
-    <h2 class="scratch-title">Em Desenvolvimento! 🍀</h2>
-    
-    <div class="scratch-card-container">
-        
-        <div class="prize">
-            <span class="prize-icon">🛍️👗</span>
-            <h3>Em Desenvolvimento</h3>
-            <p>.</p>
-            <p class="prize-subtitle"></p>
-            
-            <a href="
-               target="_blank" 
-               class="claim-btn">
-               Cobrar Agora 💬
-            </a>
-        </div>
+        <div class="scratch-section">
+            <h2 class="scratch-title">Em Desenvolvimento! 🍀</h2>
 
-        <div class="scratch-cover">
-            <div class="scratch-grid" aria-label="Raspadinha em grade">
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 1"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 2"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 3"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 4"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 5"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 6"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 7"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 8"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 9"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 10"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 11"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 12"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 13"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 14"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 15"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 16"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 17"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 18"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 19"></button>
-                <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))" aria-label="Raspar quadrado 20"></button>
-            </div>
-        </div>
+            <div class="scratch-card-container">
 
-    </div>
-    
-    <p class="scratch-footer">*SAUDADESSSSSSSSSSS.</p>
-    <a class="love-btn" href="#surprise-title">Ver surpresa de novo ✨</a>
-</div>
+                <div class="prize">
+                    <span class="prize-icon">🛍️👗</span>
+                    <h3>Em Desenvolvimento</h3>
+                    <p>.</p>
+                    <p class="prize-subtitle"></p>
 
-<div class="marriage-section">
-    
-    <div id="phase1-intro">
-        <h2 class="section-title">Não pense muito so assine... 📜</h2>
-        <p style="color: #aaa; margin-bottom: 20px;">Precisamos da sua assinatura para oficializar tudo.</p>
-        <button class="action-btn" onclick="showSignatureInput()">Assine Aqui 🖋️</button>
-    </div>
-
-    <div id="phase2-input" style="display: none;">
-        <h3 style="color: #ffd700; margin-bottom: 15px;">Como você quer assinar?</h3>
-        <input type="text" id="signature-field" placeholder="Digite seu nome aqui..." autocomplete="off">
-        <br>
-        <button class="action-btn confirm-btn" onclick="generateCertificate()">Confirmar e Oficializar</button>
-    </div>
-
-    <div id="phase3-certificate" style="display: none;">
-        
-        <div class="certificate-paper">
-            <div class="cert-header">
-                <span style="font-size: 3rem;">💍</span>
-                <h2>Certidão de União Eterna</h2>
-                <p>República Federativa do Amor</p>
-            </div>
-
-            <hr class="cert-divider">
-
-            <div class="cert-body">
-                <p>Certificamos que, diante do destino e da vontade de serem felizes, foram unidos os corações de:</p>
-                
-                <h1 class="couple-names">Stanley & Hadalia</h1>
-                
-                <p>Fica estabelecido que a partir desta data (<span id="current-date"></span>), este casal se compromete a:</p>
-                <ul class="cert-list">
-                    <li>Se amar incondicionalmente,.</li>
-                    <li>Nunca dormir brigados (regra de ouro).</li>
-                    <li>Serem parceiros em todas as aventuras da vida.</li>
-                </ul>
-                <p style="margin-top: 20px; font-size: 0.9rem;">Este documento é válido pela eternidade.</p>
-            </div>
-
-            <div class="signatures-area">
-                <div class="sig-block">
-                    <p class="sig-font">Stanley</p>
-                    <hr>
-                    <small>O Noivo</small>
+                    <a href="
+               target=" _blank" class="claim-btn">
+                        Cobrar Agora 💬
+                    </a>
                 </div>
-                <div class="sig-block">
-                    <p class="sig-font" id="final-signature"></p>
-                    <hr>
-                    <small>A Noiva</small>
+
+                <div class="scratch-cover">
+                    <div class="scratch-grid" aria-label="Raspadinha em grade">
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 1"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 2"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 3"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 4"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 5"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 6"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 7"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 8"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 9"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 10"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 11"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 12"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 13"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 14"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 15"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 16"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 17"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 18"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 19"></button>
+                        <button class="scratch-square" onclick="revealPrize(this.closest('.scratch-cover'))"
+                            aria-label="Raspar quadrado 20"></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="scratch-footer">*SAUDADESSSSSSSSSSS.</p>
+            <a class="love-btn" href="#surprise-title">Ver surpresa de novo ✨</a>
+        </div>
+
+        <div class="marriage-section">
+
+            <div id="phase1-intro">
+                <h2 class="section-title">Não pense muito so assine... 📜</h2>
+                <p style="color: #aaa; margin-bottom: 20px;">Precisamos da sua assinatura para oficializar tudo.</p>
+                <button class="action-btn" onclick="showSignatureInput()">Assine Aqui 🖋️</button>
+            </div>
+
+            <div id="phase2-input" style="display: none;">
+                <h3 style="color: #ffd700; margin-bottom: 15px;">Como você quer assinar?</h3>
+                <input type="text" id="signature-field" placeholder="Digite seu nome aqui..." autocomplete="off">
+                <br>
+                <button class="action-btn confirm-btn" onclick="generateCertificate()">Confirmar e Oficializar</button>
+            </div>
+
+            <div id="phase3-certificate" style="display: none;">
+
+                <div class="certificate-paper">
+                    <div class="cert-header">
+                        <span style="font-size: 3rem;">💍</span>
+                        <h2>Certidão de União Eterna</h2>
+                        <p>República Federativa do Amor</p>
+                    </div>
+
+                    <hr class="cert-divider">
+
+                    <div class="cert-body">
+                        <p>Certificamos que, diante do destino e da vontade de serem felizes, foram unidos os corações
+                            de:</p>
+
+                        <h1 class="couple-names">Stanley & Hadalia</h1>
+
+                        <p>Fica estabelecido que a partir desta data (<span id="current-date"></span>), este casal se
+                            compromete a:</p>
+                        <ul class="cert-list">
+                            <li>Se amar incondicionalmente,.</li>
+                            <li>Nunca dormir brigados (regra de ouro).</li>
+                            <li>Serem parceiros em todas as aventuras da vida.</li>
+                        </ul>
+                        <p style="margin-top: 20px; font-size: 0.9rem;">Este documento é válido pela eternidade.</p>
+                    </div>
+
+                    <div class="signatures-area">
+                        <div class="sig-block">
+                            <p class="sig-font">Stanley</p>
+                            <hr>
+                            <small>O Noivo</small>
+                        </div>
+                        <div class="sig-block">
+                            <p class="sig-font" id="final-signature"></p>
+                            <hr>
+                            <small>A Noiva</small>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="final-msg">Agora é oficial! Te amo! ❤️</p>
+            </div>
+        </div>
+
+        <section class="news-portal">
+            <div class="breaking-news">
+                <span class="badge">URGENTE</span>
+                <marquee>Cientistas de Teresina afirmam: Hadalia é a pessoa mais linda que ja passou pela terra &nbsp; •
+                    &nbsp; Recorde de saudade é quebrado em Brasília nesta quarta-feira &nbsp; • &nbsp; Stanley declara
+                    que seu coração é território ocupado.</marquee>
+            </div>
+
+            <div class="news-container">
+                <header class="news-header">
+                    <h1 class="portal-logo">HADALIA<span>NEWS</span></h1>
+                    <p class="date-line">Edição Especial • <span id="news-date"></span> • Brasil</p>
+                </header>
+
+                <div class="main-story">
+                    <div class="story-content">
+                        <span class="category">CIÊNCIA & AMOR</span>
+                        <h2>Estudo confirma: Hadalia é oficialmente a pessoa mais linda do mundo</h2>
+                        <p>Após anos de pesquisa e análise de sorrisos, pesquisadores (eu) concluíram que não existe
+                            ninguém que supere a beleza da Hadalia. O estudo aponta que o brilho dos olhos dela é a
+                            principal fonte de energia do Stanley.</p>
+                        <div class="author">Por Stanley Falcão, Diretor de Redação</div>
+                    </div>
+                    <div class="story-img">
+                        <img src="assets/image.png" alt="Foto da Matéria">
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="news-grid">
+                    <div class="news-item">
+                        <span class="category">ECONOMIA</span>
+                        <h3>Taxa de saudade sobe 400% e bate recorde histórico</h3>
+                        <p>Especialistas preveem que o único jeito de estabilizar a economia emocional é com uma
+                            videochamada de 5 horas.</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="category">INTERNACIONAL</span>
+                        <h3>Brasília e Teresina: A maior conexão do país</h3>
+                        <p>Satélites detectaram um fluxo intenso de amor cruzando o mapa do Brasil. O destino? O coração
+                            de Hadalia.</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="category">MUNDO GEEK</span>
+                        <h3>Dev Stanley lança atualização 'Amor 2.0'</h3>
+                        <p>A nova versão inclui suporte vitalício, beijos ilimitados e compatibilidade total com a
+                            Hadalia.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <p class="final-msg">Agora é oficial! Te amo! ❤️</p>
-    </div>    
-</div>
-
-<section class="news-portal">
-    <div class="breaking-news">
-        <span class="badge">URGENTE</span>
-        <marquee>Cientistas de Teresina afirmam: Hadalia é a pessoa mais linda que ja passou pela terra &nbsp; • &nbsp; Recorde de saudade é quebrado em Brasília nesta quarta-feira &nbsp; • &nbsp; Stanley declara que seu coração é território ocupado.</marquee>
-    </div>
-
-    <div class="news-container">
-        <header class="news-header">
-            <h1 class="portal-logo">HADALIA<span>NEWS</span></h1>
-            <p class="date-line">Edição Especial • <span id="news-date"></span> • Brasil</p>
-        </header>
-
-        <div class="main-story">
-            <div class="story-content">
-                <span class="category">CIÊNCIA & AMOR</span>
-                <h2>Estudo confirma: Hadalia é oficialmente a pessoa mais linda do mundo</h2>
-                <p>Após anos de pesquisa e análise de sorrisos, pesquisadores (eu) concluíram que não existe ninguém que supere a beleza da Hadalia. O estudo aponta que o brilho dos olhos dela é a principal fonte de energia do Stanley.</p>
-                <div class="author">Por Stanley Falcão, Diretor de Redação</div>
-            </div>
-            <div class="story-img">
-                <img src="assets/image.png" alt="Foto da Matéria"> </div>
-        </div>
-
-        <hr>
-
-        <div class="news-grid">
-            <div class="news-item">
-                <span class="category">ECONOMIA</span>
-                <h3>Taxa de saudade sobe 400% e bate recorde histórico</h3>
-                <p>Especialistas preveem que o único jeito de estabilizar a economia emocional é com uma videochamada de 5 horas.</p>
-            </div>
-            <div class="news-item">
-                <span class="category">INTERNACIONAL</span>
-                <h3>Brasília e Teresina: A maior conexão do país</h3>
-                <p>Satélites detectaram um fluxo intenso de amor cruzando o mapa do Brasil. O destino? O coração de Hadalia.</p>
-            </div>
-            <div class="news-item">
-                <span class="category">MUNDO GEEK</span>
-                <h3>Dev Stanley lança atualização 'Amor 2.0'</h3>
-                <p>A nova versão inclui suporte vitalício, beijos ilimitados e compatibilidade total com a Hadalia.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
     </main>
 
