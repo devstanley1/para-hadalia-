@@ -238,9 +238,6 @@ function generateCertificate() {
  * ==========================================
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa o calendário
-    initCalendar();
-    
     // Inicia o efeito de corações
     startHeartRain();
     
