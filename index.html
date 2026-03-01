@@ -61,7 +61,218 @@
             </div>
         </div>
 
+        <!-- ====== CALENDÁRIO DE MARÇO ====== -->
+        <section id="calendario-marco" style="margin: 40px auto; max-width: 900px; font-family: 'Nunito', sans-serif;">
 
+          <!-- CSS do Calendário -->
+          <style>
+            #calendario-marco * { box-sizing: border-box; }
+            .cal-bg-blobs { position: absolute; inset: 0; overflow: hidden; pointer-events: none; opacity: .18; z-index: 0; }
+            .cal-bg-blobs .blob1 { position: absolute; top: -10%; left: -10%; width: 40%; height: 40%; background: #db2777; border-radius: 50%; filter: blur(120px); }
+            .cal-bg-blobs .blob2 { position: absolute; bottom: -10%; right: -10%; width: 40%; height: 40%; background: #d97706; border-radius: 50%; filter: blur(120px); }
+            .cal-wrapper { position: relative; z-index: 1; }
+
+            /* Badge */
+            .cal-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); margin-bottom: 16px; }
+            .cal-badge svg { width: 16px; height: 16px; color: #ec4899; }
+            .cal-badge span { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #a3a3a3; }
+
+            /* Header */
+            .cal-header { text-align: center; margin-bottom: 48px; }
+            .cal-header h2 { font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(to right, #ec4899, #fff, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 0 0 12px; }
+            .cal-header p { color: #a3a3a3; max-width: 500px; margin: 0 auto; font-style: italic; font-size: .95rem; }
+
+            /* Grid layout */
+            .cal-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+            @media (min-width: 768px) { .cal-grid { grid-template-columns: 7fr 5fr; } }
+
+            /* Calendar panel */
+            .cal-panel { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 24px; padding: 24px; backdrop-filter: blur(12px); }
+            .cal-days-header { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 12px; }
+            .cal-days-header span { text-align: center; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #737373; font-weight: 700; padding: 6px 0; }
+            .cal-days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+            .cal-day-btn { aspect-ratio: 1; border-radius: 12px; font-size: .85rem; font-weight: 600; border: 1px solid transparent; background: transparent; color: #a3a3a3; cursor: pointer; transition: all .3s; display: flex; align-items: center; justify-content: center; position: relative; }
+            .cal-day-btn:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); }
+            .cal-day-btn.active { background: #db2777; color: #fff; box-shadow: 0 0 20px rgba(219,39,119,.4); transform: scale(1.12); z-index: 10; border-color: transparent; }
+            .cal-day-btn.anniversary { border: 2px solid rgba(245,158,11,.5); }
+            .cal-day-btn .heart-mark { position: absolute; top: 3px; right: 3px; font-size: 7px; color: #f59e0b; }
+            .cal-day-btn.active .heart-mark { color: #fff; }
+
+            .cal-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: 10px; color: #737373; text-transform: uppercase; letter-spacing: 2px; }
+            .cal-footer-dot { width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; animation: cal-pulse 2s infinite; display: inline-block; margin-right: 6px; }
+            @keyframes cal-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+
+            /* Message card */
+            .cal-msg-card { background: linear-gradient(to bottom right, #db2777, #831843); border-radius: 24px; padding: 32px; box-shadow: 0 25px 50px rgba(0,0,0,.3); position: relative; overflow: hidden; min-height: 260px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(255,255,255,.2); }
+            .cal-msg-card .bg-heart { position: absolute; top: -20px; right: -24px; font-size: 140px; opacity: .08; transform: rotate(12deg); pointer-events: none; }
+            .cal-msg-card .msg-label { color: #fbcfe8; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+            .cal-msg-card .msg-text { font-size: clamp(1rem, 2.5vw, 1.35rem); font-weight: 500; line-height: 1.6; color: #fff; margin-bottom: 20px; position: relative; z-index: 1; }
+            .cal-msg-card .msg-bar { height: 4px; width: 48px; background: rgba(255,255,255,.3); border-radius: 999px; }
+
+            /* Promise panel */
+            .cal-promise { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 24px; padding: 24px; margin-top: 20px; }
+            .cal-promise h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #f59e0b; font-weight: 700; margin: 0 0 16px; display: flex; align-items: center; gap: 8px; }
+            .cal-promise-item { display: flex; align-items: center; gap: 12px; font-size: .9rem; color: #d4d4d4; margin-bottom: 12px; }
+            .cal-promise-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,.05); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+
+            /* Anniversary effect */
+            .cal-anniversary-overlay { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; pointer-events: none; padding: 16px; }
+            .cal-anniversary-box { background: #f59e0b; color: #000; padding: 24px 40px; border-radius: 24px; font-weight: 900; font-size: clamp(1.3rem, 4vw, 2rem); box-shadow: 0 0 60px rgba(245,158,11,.6); animation: cal-bounce 1s infinite; text-align: center; }
+            .cal-anniversary-box .sub { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+            @keyframes cal-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+            /* Cal footer do site */
+            .cal-site-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.05); text-align: center; }
+            .cal-site-footer p { color: #737373; font-size: .85rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
+            .cal-site-footer .pulse-heart { color: #ec4899; animation: cal-pulse 1.5s infinite; }
+          </style>
+
+          <div style="position: relative;">
+            <div class="cal-bg-blobs"><div class="blob1"></div><div class="blob2"></div></div>
+
+            <div class="cal-wrapper">
+              <!-- Cabeçalho -->
+              <div class="cal-header">
+                <div class="cal-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span>Março 2026</span>
+                </div>
+                <h2>31 Dias de Nós</h2>
+                <p>"De Agricolândia para Brasília: um calendário feito de promessas, cuidado e o sonho da nossa família."</p>
+              </div>
+
+              <div class="cal-grid">
+                <!-- Painel do Calendário -->
+                <div class="cal-panel">
+                  <div class="cal-days-header">
+                    <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+                  </div>
+                  <div class="cal-days-grid" id="calDaysGrid"></div>
+                  <div class="cal-footer">
+                    <div><span class="cal-footer-dot"></span> Aniversário (2 de Março)</div>
+                    <span>Agricolândia ↔ Brasília</span>
+                  </div>
+                </div>
+
+                <!-- Mensagem + Promessas -->
+                <div>
+                  <div class="cal-msg-card" id="calMsgCard">
+                    <div class="bg-heart">❤️</div>
+                    <div style="position: relative; z-index: 1;">
+                      <div class="msg-label">⭐ Mensagem do Dia <span id="calMsgDay">1</span></div>
+                      <p class="msg-text" id="calMsgText">"Março começou! Um novo mês para te amar ainda mais. Hoje o dia é nosso, mesmo com a distância. ☀️"</p>
+                      <div class="msg-bar"></div>
+                    </div>
+                  </div>
+
+                  <div class="cal-promise">
+                    <h3>🏠 Nossa Promessa</h3>
+                    <div class="cal-promise-item">
+                      <div class="cal-promise-icon" style="color:#ec4899;">📍</div>
+                      <span>Encurtar a distância entre nós.</span>
+                    </div>
+                    <div class="cal-promise-item">
+                      <div class="cal-promise-icon" style="color:#f59e0b;">👨‍👩‍👧‍👦</div>
+                      <span>Construir nossa família e nosso lar.</span>
+                    </div>
+                    <div class="cal-promise-item">
+                      <div class="cal-promise-icon" style="color:#22c55e;">✨</div>
+                      <span>Te fazer a mulher mais feliz do mundo.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rodapé do calendário -->
+              <div class="cal-site-footer">
+                <p>Feito com <span class="pulse-heart">❤️</span> por Stanley para Hadalia</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Efeito de aniversário -->
+          <div id="calAnniversaryOverlay" class="cal-anniversary-overlay" style="display: none;">
+            <div class="cal-anniversary-box">
+              🎉 FELIZ 1 MÊS! 🎉
+              <div class="sub">O primeiro de uma vida inteira</div>
+            </div>
+          </div>
+
+          <!-- JS do Calendário -->
+          <script>
+          (function() {
+            const messages = {
+              1: "Março começou! Um novo mês para te amar ainda mais. Hoje o dia é nosso, mesmo com a distância. ☀️",
+              2: "FELIZ 1 MÊS DE NAMORO! 💍 O melhor mês da minha vida. O primeiro de uma eternidade. Te amo, minha noiva!",
+              3: "Acordar sabendo que sou seu é o que me dá forças aqui em Agricolândia. Bom dia, minha princesa. ❤️",
+              4: "Se o caixa estiver cheio hoje, respira fundo. Pensa no nosso futuro lar, sem filas, só nós dois. 🏠",
+              5: "Brasília parece longe no mapa, mas no meu coração você está a um batimento de distância. 📍",
+              6: "Prometo te fazer a mulher mais feliz do mundo. Cada esforço meu é por nós. 🌟",
+              7: "Sábado de saudade. Queria estar aí para te fazer uma massagem depois do trabalho. 💆‍♀️",
+              8: "Dia da Mulher. E eu tenho a mulher mais incrível, guerreira e linda do universo ao meu lado. 🌹",
+              9: "Planejar nossa família com você é o meu sonho favorito. Imagina nossos pequenos? 👨‍👩‍👧‍👦",
+              10: "Você é o meu 'sim' para todas as perguntas da vida. Nunca duvide do meu amor. ✔️❤️",
+              11: "O cansaço do trabalho passa, mas o meu cuidado por você só aumenta. Descansa, meu amor. 🌙",
+              12: "Contando as moedas e os dias para o nosso próximo encontro.",
+              13: "Sexta-feira! Que sua jornada no caixa voe para você vir logo pros meus braços (mesmo que por vídeo). 🎥",
+              14: "Dormir pensando no dia em que nossa rotina será acordar e tomar café juntos na nossa casa. ☕",
+              15: "Domingo de paz. Você é o meu descanso, Hadalia. Minha paz em meio ao caos. 🕊️",
+              16: "Mais uma semana começando. Estarei aqui para te apoiar em cada minuto, não esquece. 🤝",
+              17: "Seu sorriso é o meu combustível. Sorria hoje, mesmo que o dia seja difícil. 😊",
+              18: "Agricolândia é pequena demais para o tamanho do amor que sinto por você. 🌎❤️",
+              19: "Quero cuidar de você para sempre. Na saúde, na doença e no cansaço pós-expediente. 🩹",
+              20: "Faltam poucos dias para completarmos mais semanas de pura felicidade. Obrigado por existir. ✨",
+              21: "Final de semana chegou! Momento de esquecer os problemas e focar no nosso amor. 🥂",
+              22: "Você não é apenas minha namorada, é minha futura esposa e mãe dos meus filhos. 💍",
+              23: "Segunda-feira pesada? Fecha os olhos e sente o meu abraço te apertando daí. 🤗",
+              24: "Vou fazer de tudo por você. Você merece o mundo, e eu vou tentar te dar ele. 🌍",
+              25: "Minha motivação diária: Construir nossa vida juntos. Falta pouco para o nosso 'nós'. 🔨❤️",
+              26: "Operadora de caixa mais linda do mundo. O mercado tem sorte de ter esse sorriso lá. 🛒",
+              27: "O 'para sempre' é muito tempo? Para mim, parece pouco para o quanto quero te amar. ♾️",
+              28: "Sábado de planos. Onde vamos morar? Como será nossa sala? Amo sonhar com você. 🛋️",
+              29: "O amor vence a distância. Brasília e Agricolândia nunca estiveram tão perto. 🗺️",
+              30: "Reta final de Março. Mais um mês vencido com muito amor e fidelidade. 🏆",
+              31: "Terminando o mês com a mesma certeza do primeiro dia: É VOCÊ. Ontem, hoje e sempre. 💍❤️"
+            };
+
+            let selectedDay = 1;
+            const grid = document.getElementById('calDaysGrid');
+            const msgDay = document.getElementById('calMsgDay');
+            const msgText = document.getElementById('calMsgText');
+            const overlay = document.getElementById('calAnniversaryOverlay');
+
+            // Gerar botões dos dias
+            for (let d = 1; d <= 31; d++) {
+              const btn = document.createElement('button');
+              btn.className = 'cal-day-btn' + (d === 1 ? ' active' : '') + (d === 2 ? ' anniversary' : '');
+              btn.textContent = d;
+              btn.dataset.day = d;
+              if (d === 2) btn.innerHTML = d + '<span class="heart-mark">❤️</span>';
+              btn.addEventListener('click', function() { selectDay(d); });
+              grid.appendChild(btn);
+            }
+
+            function selectDay(day) {
+              selectedDay = day;
+              // Atualizar botões
+              grid.querySelectorAll('.cal-day-btn').forEach(function(b) {
+                b.classList.toggle('active', parseInt(b.dataset.day) === day);
+              });
+              // Atualizar mensagem
+              msgDay.textContent = day;
+              msgText.textContent = '"' + messages[day] + '"';
+              // Efeito aniversário
+              if (day === 2) {
+                overlay.style.display = 'flex';
+                setTimeout(function() { overlay.style.display = 'none'; }, 5000);
+              } else {
+                overlay.style.display = 'none';
+              }
+            }
+          })();
+          </script>
+        </section>
+        <!-- ====== FIM CALENDÁRIO DE MARÇO ====== -->
 
         
  <section class="rest-section">
@@ -81,14 +292,6 @@
                 <div class="relax-footer">
                     <p>Lembrete: To com muita SAUDADESSSSSS😭. ✨</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Seção Calendário -->
-        <section aria-labelledby="calendar-title">
-            <h2 id="calendar-title">📅 Nosso Mês</h2>
-            <div class="calendar-grid" id="calendarContainer" role="grid">
-                <!-- Calendário gerado via JavaScript -->
             </div>
         </section>
 
