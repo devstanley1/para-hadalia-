@@ -195,7 +195,7 @@
           <!-- Efeito de aniversário -->
           <div id="calAnniversaryOverlay" class="cal-anniversary-overlay" style="display: none;">
             <div class="cal-anniversary-box">
-              🎉 FELIZ 2 MÊS! 🎉
+              🎉 FELIZ 2 MÊSES! 🎉
               <div class="sub">O segundo de uma vida inteira</div>
             </div>
           </div>
@@ -276,8 +276,14 @@
               // Atualizar mensagem
               msgDay.textContent = day;
               msgText.textContent = '"' + messages[day] + '"';
-              // Efeito aniversário
+              // Efeito aniversário e aniversário de nascimento
+              const box = document.getElementById('calAnniversaryBox');
               if (day === 2) {
+                box.innerHTML = '🎉 FELIZ 2 MÊS! 🎉<div class="sub">O segundo de uma vida inteira</div>';
+                overlay.style.display = 'flex';
+                setTimeout(function() { overlay.style.display = 'none'; }, 5000);
+              } else if (day === 25) {
+                box.innerHTML = '🎂 FELIZ ANIVERSÁRIO MINHA PRINCESA! 🎂<div class="sub">Que seu novo ciclo seja repleto de amor, saúde e sonhos realizados! Parabéns, meu amor! 💖</div>';
                 overlay.style.display = 'flex';
                 setTimeout(function() { overlay.style.display = 'none'; }, 5000);
               } else {
