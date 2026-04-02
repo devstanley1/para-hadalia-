@@ -135,9 +135,9 @@
               <div class="cal-header">
                 <div class="cal-badge">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  <span>Março 2026</span>
+                  <span>abril 2026</span>
                 </div>
-                <h2>31 Dias de Nós</h2>
+                <h2>30 Dias de Nós</h2>
                 <p>"De Agricolândia para Brasília: um calendário feito de promessas, cuidado e o sonho da nossa família."</p>
               </div>
 
@@ -149,8 +149,20 @@
                   </div>
                   <div class="cal-days-grid" id="calDaysGrid"></div>
                   <div class="cal-footer">
-                    <div><span class="cal-footer-dot"></span> Nosso primeiro mes completo (2 de Março)</div>
+                    <div><span class="cal-footer-dot"></span> Nosso segundo mes completo (2 de abril)</div>
+                    <div><span class="cal-footer-dot" style="background:#f59e0b;"></span> Aniversário do meu amor, minha princesa ❤️🥳 (25 de março)</div>
                     <span>Agricolândia ↔ Brasília</span>
+                            .cal-day-btn.birthday {
+                                border: 2px solid #f59e0b;
+                                position: relative;
+                            }
+                            .cal-day-btn.birthday .birthday-mark {
+                                position: absolute;
+                                top: 3px;
+                                right: 3px;
+                                font-size: 10px;
+                                color: #f59e0b;
+                            }
                   </div>
                 </div>
 
@@ -252,10 +264,15 @@
                         }
                         for (let d = 1; d <= totalDays; d++) {
                             const btn = document.createElement('button');
-                            btn.className = 'cal-day-btn' + (d === 1 ? ' active' : '') + (d === 2 ? ' anniversary' : '');
+                            let extraClass = '';
+                            if (d === 1) extraClass = ' active';
+                            if (d === 2) extraClass += ' anniversary';
+                            if (d === 25) extraClass += ' birthday';
+                            btn.className = 'cal-day-btn' + extraClass;
                             btn.textContent = d;
                             btn.dataset.day = d;
                             if (d === 2) btn.innerHTML = d + '<span class="heart-mark">❤️</span>';
+                            if (d === 25) btn.innerHTML = d + '<span class="birthday-mark">🎂</span>';
                             btn.addEventListener('click', function() { selectDay(d); });
                             grid.appendChild(btn);
                         }
