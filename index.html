@@ -700,33 +700,6 @@
                 });
             }
                     </script>
-                    <script>
-                    // Player Gunslinger
-                    (function() {
-                        const audio = document.getElementById('gunslinger-audio');
-                        const btn = document.getElementById('gunslinger-play-btn');
-                        const icon = document.getElementById('gunslinger-play-icon');
-                        let isPlaying = false;
-                        if (btn && audio && icon) {
-                            btn.addEventListener('click', function() {
-                                if (audio.paused) {
-                                    audio.play();
-                                    icon.textContent = '⏸️';
-                                    btn.querySelector('span + span')?.remove();
-                                    isPlaying = true;
-                                } else {
-                                    audio.pause();
-                                    icon.textContent = '▶️';
-                                    isPlaying = false;
-                                }
-                            });
-                            audio.addEventListener('ended', function() {
-                                icon.textContent = '▶️';
-                                isPlaying = false;
-                            });
-                        }
-                    })();
-                    </script>
         <section class="rest-section">
             <div class="relax-box">
                 <div class="header-relax">
