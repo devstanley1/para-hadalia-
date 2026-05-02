@@ -297,13 +297,14 @@
                                                         <img src="assets/gunslinger/cover.jpg" alt="Capa Gunslinger Avenged Sevenfold" style="width: 180px; height: 180px; border-radius: 18px; box-shadow: 0 4px 24px #0008; object-fit: cover; border: 2px solid #fff;">
                                                         <div style="font-size: 1.1rem; color: #fff; font-weight: 700; margin-bottom: 2px;">Gunslinger</div>
                                                         <div style="font-size: 1rem; color: #ffd700; margin-bottom: 12px;">Avenged Sevenfold</div>
-                                                        <audio id="gunslinger-audio" preload="auto" controls>
+                                                        <audio id="gunslinger-audio" preload="auto" style="display: none;">
                                                             <source src="assets/gunslinger/gunslinger.mp3" type="audio/mpeg">
                                                             Seu navegador não suporta áudio.
                                                         </audio>
                                                         <button id="gunslinger-play-btn" style="background: #db2777; color: #fff; border: none; border-radius: 999px; padding: 14px 32px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 12px #db27777a; transition: background .2s; display: flex; align-items: center; gap: 10px;">
                                                                 <span id="gunslinger-play-icon">▶️</span> Ouvir agora
                                                         </button>
+                                                        <input id="gunslinger-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Barra de progresso da música" style="width: 100%; max-width: 340px; appearance: none; height: 8px; border-radius: 999px; background: linear-gradient(90deg, #ff3385 0%, #ff3385 0%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.18) 100%); outline: none; cursor: pointer;">
                         </div>
                         <p style="color: #a3a3a3; font-size: .95rem; margin-top: 18px;">Clique no play para ouvir a música favorita da Hadalia!</p>
                     </div>
@@ -315,22 +316,46 @@
                         const audio = document.getElementById('gunslinger-audio');
                         const btn = document.getElementById('gunslinger-play-btn');
                         const icon = document.getElementById('gunslinger-play-icon');
-                        let isPlaying = false;
-                        if (btn && audio && icon) {
+                        const progress = document.getElementById('gunslinger-progress');
+
+                        function updateProgressUI(value) {
+                            progress.style.background = 'linear-gradient(90deg, #ff3385 0%, #ff3385 ' + value + '%, rgba(255,255,255,0.18) ' + value + '%, rgba(255,255,255,0.18) 100%)';
+                        }
+
+                        if (btn && audio && icon && progress) {
+                            updateProgressUI(0);
+
                             btn.addEventListener('click', function() {
                                 if (audio.paused) {
-                                    audio.play();
-                                    icon.textContent = '⏸️';
-                                    isPlaying = true;
+                                    audio.play().then(function() {
+                                        icon.textContent = '⏸️';
+                                    }).catch(function() {
+                                        icon.textContent = '▶️';
+                                    });
                                 } else {
                                     audio.pause();
                                     icon.textContent = '▶️';
-                                    isPlaying = false;
                                 }
                             });
+
+                            audio.addEventListener('timeupdate', function() {
+                                if (!audio.duration) return;
+                                const value = (audio.currentTime / audio.duration) * 100;
+                                progress.value = value;
+                                updateProgressUI(value);
+                            });
+
+                            progress.addEventListener('input', function() {
+                                if (!audio.duration) return;
+                                const nextTime = (progress.value / 100) * audio.duration;
+                                audio.currentTime = nextTime;
+                                updateProgressUI(progress.value);
+                            });
+
                             audio.addEventListener('ended', function() {
                                 icon.textContent = '▶️';
-                                isPlaying = false;
+                                progress.value = 0;
+                                updateProgressUI(0);
                             });
                         }
                     })();
