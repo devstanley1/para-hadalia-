@@ -258,12 +258,10 @@
                             let extraClass = '';
                             if (d === 1) extraClass = ' active';
                             if (d === 2) extraClass += ' anniversary';
-                            if (d === 25) extraClass += ' birthday';
                             btn.className = 'cal-day-btn' + extraClass;
                             btn.textContent = d;
                             btn.dataset.day = d;
                             if (d === 2) btn.innerHTML = d + '<span class="heart-mark">❤️</span>';
-                            if (d === 25) btn.innerHTML = d + '<span class="birthday-mark">🎂</span>';
                             btn.addEventListener('click', function() { selectDay(d); });
                             grid.appendChild(btn);
                         }
@@ -283,10 +281,6 @@
                                 box.innerHTML = '🎉 FELIZ 3 MESES! 🎉<div class="sub">O terceiro de uma vida inteira</div>';
                                 overlay.style.display = 'flex';
                                 setTimeout(function() { overlay.style.display = 'none'; }, 5000);
-                            } else if (day === 25) {
-                                box.innerHTML = '🎂 FELIZ ANIVERSÁRIO MINHA PRINCESA! 🎂<div class="sub">Que seu novo ciclo seja repleto de amor, saúde e sonhos realizados! Parabéns, meu amor! 💖</div>';
-                                overlay.style.display = 'flex';
-                                setTimeout(function() { overlay.style.display = 'none'; }, 5000);
                             } else {
                                 overlay.style.display = 'none';
                             }
@@ -300,44 +294,47 @@
                     <div style="background: rgba(255,255,255,0.03); border-radius: 24px; padding: 32px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); text-align: center; border: 1px solid rgba(255,255,255,0.08);">
                         <h2 style="font-family: 'Dancing Script', cursive; color: #ffd700; font-size: 2.2rem; margin-bottom: 18px;">Música Favorita 🎵</h2>
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 18px;">
-                            <img src="assets/gunslinger/cover.jpg" alt="Capa Gunslinger Avenged Sevenfold" style="width: 180px; height: 180px; border-radius: 18px; box-shadow: 0 4px 24px #0008; object-fit: cover; border: 2px solid #fff;">
-                            <div style="font-size: 1.1rem; color: #fff; font-weight: 700; margin-bottom: 2px;">Gunslinger</div>
-                            <div style="font-size: 1rem; color: #ffd700; margin-bottom: 12px;">Avenged Sevenfold</div>
-                            <audio id="gunslinger-audio" src="assets/gunslinger/gunslinger.mp3"></audio>
-                            <button id="gunslinger-play-btn" style="background: #db2777; color: #fff; border: none; border-radius: 999px; padding: 14px 32px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 12px #db27777a; transition: background .2s; display: flex; align-items: center; gap: 10px;">
-                                <span id="gunslinger-play-icon">▶️</span> Ouvir agora
-                            </button>
+                                                        <img src="/assets/gunslinger/cover.jpg" alt="Capa Gunslinger Avenged Sevenfold" style="width: 180px; height: 180px; border-radius: 18px; box-shadow: 0 4px 24px #0008; object-fit: cover; border: 2px solid #fff;">
+                                                        <div style="font-size: 1.1rem; color: #fff; font-weight: 700; margin-bottom: 2px;">Gunslinger</div>
+                                                        <div style="font-size: 1rem; color: #ffd700; margin-bottom: 12px;">Avenged Sevenfold</div>
+                                                        <audio id="gunslinger-audio" preload="auto">
+                                                            <source src="/assets/gunslinger/gunslinger.mp3" type="audio/mpeg">
+                                                            Seu navegador não suporta áudio.
+                                                        </audio>
+                                                        <button id="gunslinger-play-btn" style="background: #db2777; color: #fff; border: none; border-radius: 999px; padding: 14px 32px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 12px #db27777a; transition: background .2s; display: flex; align-items: center; gap: 10px;">
+                                                                <span id="gunslinger-play-icon">▶️</span> Ouvir agora
+                                                        </button>
                         </div>
                         <p style="color: #a3a3a3; font-size: .95rem; margin-top: 18px;">Clique no play para ouvir a música favorita da Hadalia!</p>
                     </div>
                 </section>
                 <!-- ====== FIM SEÇÃO MÚSICA FAVORITA ====== -->
-
-        
- <section class="rest-section">
-            <div class="relax-box">
-                <div class="header-relax">
-                    <span class="icon">✨</span>
-                    <h2>Para quando as tulipas chegar</h2>
-                </div>
-
-                <div class="letter-content">
-                    <p></p>
-                    <p>Oi meu amor, voce disse que tulipas e roxo são suas flor e cor favorita, entao comprei esse presente pra voce com muito carinho, te amo muito minha princesa.
-                    </p>
-                    <p class="signature">Com todo o meu amor,<br>Stanley</p>
-                </div>
-
-                <div class="relax-footer">
-                    <p>Lembrete: To com muita SAUDADESSSSSS😭. ✨</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Cartas -->
-        <section aria-labelledby="letters-title">
-            <h2 id="letters-title">💌 Abra Quando...</h2>
-            <p class="letters-description">
+                    <script>
+                    // Player Gunslinger
+                    (function() {
+                        const audio = document.getElementById('gunslinger-audio');
+                        const btn = document.getElementById('gunslinger-play-btn');
+                        const icon = document.getElementById('gunslinger-play-icon');
+                        let isPlaying = false;
+                        if (btn && audio && icon) {
+                            btn.addEventListener('click', function() {
+                                if (audio.paused) {
+                                    audio.play();
+                                    icon.textContent = '⏸️';
+                                    isPlaying = true;
+                                } else {
+                                    audio.pause();
+                                    icon.textContent = '▶️';
+                                    isPlaying = false;
+                                }
+                            });
+                            audio.addEventListener('ended', function() {
+                                icon.textContent = '▶️';
+                                isPlaying = false;
+                            });
+                        }
+                    })();
+                    </script>
                 (Clique várias vezes nos envelopes, as mensagens mudam!)
             </p>
 
