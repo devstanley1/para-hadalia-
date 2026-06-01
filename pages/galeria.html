@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Museu da minha Deusa">
+    <title>Museu da minha Deusa 🛐</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/galeria.css">
+</head>
+<body>
+    <div class="kitty-top" aria-hidden="true">
+        <img src="../assets/hello%20kitty.gif" alt="">
+        <img src="../assets/hello%20kitty.gif" alt="">
+        <img src="../assets/hello%20kitty.gif" alt="">
+    </div>
+
+    <main class="gallery-page">
+        <header class="gallery-header">
+            <a class="back-btn" href="../index.html">Voltar</a>
+            <h1>museu da minha Deusa 🛐</h1>
+            <p>As fotos mais lindas da mulher mais incrível desse mundo.</p>
+        </header>
+
+        <section class="gallery-controls" aria-label="controles da galeria">
+            <button id="addPhotosBtn" class="control-btn primary">Adicionar fotos</button>
+            <button id="clearPhotosBtn" class="control-btn danger">Remover todas</button>
+            <input id="galleryFileInput" type="file" accept="image/*" multiple hidden>
+        </section>
+
+        <section>
+            <div id="emptyGallery" class="empty-state">
+                <img src="../assets/hello%20kitty.gif" alt="Hello Kitty decorativa">
+                <p>A galeria esta vazia. Clique em <strong>Adicionar fotos</strong> para começar.</p>
+            </div>
+            <div id="galleryGrid" class="gallery-grid" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <div id="zoomModal" class="zoom-modal" hidden>
+        <button id="closeZoomBtn" class="zoom-close-btn" aria-label="Fechar visualizacao">×</button>
+        <img id="zoomImage" class="zoom-image" alt="Foto ampliada da galeria">
+    </div>
+
+    <script src="../js/galeria.js"></script>
+</body>
+</html>

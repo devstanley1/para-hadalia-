@@ -312,35 +312,8 @@
                     </div>
                 </section>
                 <!-- ====== FIM SEÇÃO MÚSICA FAVORITA ====== -->
-                    <script>
-                    // Player Gunslinger
-                    (function() {
-                        const audio = document.getElementById('gunslinger-audio');
-                        const btn = document.getElementById('gunslinger-play-btn');
-                        const icon = document.getElementById('gunslinger-play-icon');
-                        let isPlaying = false;
-                        if (btn && audio && icon) {
-                            btn.addEventListener('click', function() {
-                                if (audio.paused) {
-                                    audio.play();
-                                    icon.textContent = '⏸️';
-                                    isPlaying = true;
-                                } else {
-                                    audio.pause();
-                                    icon.textContent = '▶️';
-                                    isPlaying = false;
-                                }
-                            });
-                            audio.addEventListener('ended', function() {
-                                icon.textContent = '▶️';
-                                isPlaying = false;
-                            });
-                        }
-                    })();
-                    </script>
                <p class="letters-description">
                 (Clique várias vezes nos envelopes, as mensagens mudam!)
-            </p>
             </p>
 
             <div class="letters-grid">
@@ -686,23 +659,26 @@
                         const audio = document.getElementById('gunslinger-audio');
                         const btn = document.getElementById('gunslinger-play-btn');
                         const icon = document.getElementById('gunslinger-play-icon');
-                        let isPlaying = false;
+                        const labelPlaying = 'Pausar';
+                        const labelPaused = 'Ouvir agora';
                         if (btn && audio && icon) {
                             btn.addEventListener('click', function() {
                                 if (audio.paused) {
-                                    audio.play();
-                                    icon.textContent = '⏸️';
-                                    btn.querySelector('span + span')?.remove();
-                                    isPlaying = true;
+                                    audio.play().then(function() {
+                                        icon.textContent = '⏸️';
+                                        btn.lastChild.textContent = ' ' + labelPlaying;
+                                    }).catch(function() {
+                                        alert('Nao foi possivel tocar o audio agora. Toque novamente para tentar.');
+                                    });
                                 } else {
                                     audio.pause();
                                     icon.textContent = '▶️';
-                                    isPlaying = false;
+                                    btn.lastChild.textContent = ' ' + labelPaused;
                                 }
                             });
                             audio.addEventListener('ended', function() {
                                 icon.textContent = '▶️';
-                                isPlaying = false;
+                                btn.lastChild.textContent = ' ' + labelPaused;
                             });
                         }
                     })();

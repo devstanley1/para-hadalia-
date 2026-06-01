@@ -122,6 +122,7 @@ function handleEscapeKey(event) {
  * ==========================================
  */
 const HEART_INTERVAL = 600; // ms entre cada coração
+const KITTY_INTERVAL = 1700; // ms entre cada hello kitty
 const HEART_LIFETIME = 5000; // ms de duração do coração
 
 /**
@@ -147,10 +148,33 @@ function createHeart() {
 }
 
 /**
+ * Cria um gif da Hello Kitty caindo ao fundo
+ */
+function createFallingKitty() {
+    const kitty = document.createElement('img');
+    kitty.classList.add('kitty-rain');
+    kitty.src = 'assets/hello%20kitty.gif';
+    kitty.alt = '';
+    kitty.setAttribute('aria-hidden', 'true');
+    kitty.style.left = `${Math.random() * 100}vw`;
+    kitty.style.width = `${Math.random() * 24 + 28}px`;
+    kitty.style.animationDuration = `${Math.random() * 3 + 4}s`;
+
+    document.body.appendChild(kitty);
+
+    setTimeout(() => {
+        if (kitty.parentNode) {
+            kitty.remove();
+        }
+    }, HEART_LIFETIME + 2000);
+}
+
+/**
  * Inicia o efeito de chuva de corações
  */
 function startHeartRain() {
     setInterval(createHeart, HEART_INTERVAL);
+    setInterval(createFallingKitty, KITTY_INTERVAL);
 }
 
 /**
