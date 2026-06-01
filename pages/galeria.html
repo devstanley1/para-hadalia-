@@ -26,8 +26,22 @@
 
         <section class="gallery-controls" aria-label="controles da galeria">
             <button id="addPhotosBtn" class="control-btn primary">Adicionar fotos</button>
-            <button id="clearPhotosBtn" class="control-btn danger">Remover todas</button>
+            <button id="clearPhotosBtn" class="control-btn danger">Selecionar para remover</button>
+            <button id="exportGalleryBtn" class="control-btn neutral">Exportar galeria</button>
+            <button id="importGalleryBtn" class="control-btn neutral">Importar no celular</button>
             <input id="galleryFileInput" type="file" accept="image/*" multiple hidden>
+            <input id="cameraFileInput" type="file" accept="image/*" capture="environment" hidden>
+            <input id="galleryImportInput" type="file" accept="application/json" hidden>
+        </section>
+        <p id="gallerySyncNote" class="gallery-sync-note">Sincronizacao em tempo real: conectando...</p>
+
+        <section id="captionComposer" class="caption-composer" hidden>
+            <h3>Adicionar legendas antes de publicar</h3>
+            <div id="captionList" class="caption-list"></div>
+            <div class="caption-actions">
+                <button id="publishPhotosBtn" class="control-btn primary" type="button">Publicar fotos</button>
+                <button id="cancelPublishBtn" class="control-btn danger" type="button">Cancelar</button>
+            </div>
         </section>
 
         <section>
@@ -44,6 +58,19 @@
         <img id="zoomImage" class="zoom-image" alt="Foto ampliada da galeria">
     </div>
 
+    <div id="sourcePickerModal" class="source-picker-modal" hidden>
+        <div class="source-picker-card">
+            <h3>Adicionar foto</h3>
+            <p>Escolha como deseja enviar a foto.</p>
+            <div class="source-picker-actions">
+                <button id="chooseCameraBtn" class="control-btn primary" type="button">Abrir camera</button>
+                <button id="chooseGalleryBtn" class="control-btn neutral" type="button">Abrir galeria</button>
+            </div>
+            <button id="closeSourcePickerBtn" class="source-close-btn" type="button">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../js/galeria.js"></script>
 </body>
 </html>
