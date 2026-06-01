@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <!-- ====== CALENDÁRIO DE MARÇO ====== -->
+        <!-- ====== CALENDÁRIO DE JUNHO ====== -->
         <section id="calendario-marco" style="margin: 40px auto; max-width: 900px; font-family: 'Nunito', sans-serif;">
 
           <!-- CSS do Calendário -->
@@ -135,9 +135,9 @@
               <div class="cal-header">
                 <div class="cal-badge">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  <span>maio 2026</span>
+                                    <span>junho 2026</span>
                 </div>
-                <h2>31 Dias de Nós</h2>
+                                <h2>30 Dias de Nós</h2>
                 <p>"De Agricolândia para Brasília: um calendário feito de promessas, cuidado e o sonho da nossa família."</p>
               </div>
 
@@ -148,12 +148,11 @@
                     <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
                   </div>
                   <div class="cal-days-grid" id="calDaysGrid"></div>
-                  <div class="cal-footer">
-                    <div><span class="cal-footer-dot"></span> Nosso terceiro mes completo (2 de maio)</div>
-                    <div><span class="cal-footer-dot" style="background:#f59e0b;"></span> Aniversário do meu amor, minha princesa ❤️🥳 (25 de abril)</div>
-                    <span>Agricolândia ↔ Brasília</span>
-                    
-                  </div>
+                                    <div class="cal-footer">
+                                        <div><span class="cal-footer-dot"></span> Nosso quarto mês de namoro (2 de junho)</div>
+                                        <div><span class="cal-footer-dot" style="background:#f59e0b;"></span> Nosso Dia dos Namorados (12 de junho)</div>
+                                        <span>Agricolândia ↔ Brasília</span>
+                                    </div>
                 </div>
 
                 <!-- Mensagem + Promessas -->
@@ -162,7 +161,7 @@
                     <div class="bg-heart">❤️</div>
                     <div style="position: relative; z-index: 1;">
                       <div class="msg-label">⭐ Mensagem do Dia <span id="calMsgDay">1</span></div>
-                      <p class="msg-text" id="calMsgText">"Março começou! Um novo mês para te amar ainda mais. Hoje o dia é nosso, mesmo com a distância. ☀️"</p>
+                      <p class="msg-text" id="calMsgText">"Junho começou, meu amor. Que esse novo mês seja cheio de carinho, cuidado e planos lindos para nós dois. ✨"</p>
                       <div class="msg-bar"></div>
                     </div>
                   </div>
@@ -187,7 +186,7 @@
 
               <!-- Rodapé do calendário -->
               <div class="cal-site-footer">
-                <p>Feito com <span class="pulse-heart">❤️</span> por Stanley para minha princesa Hadalia</p>
+                <p>Feito com <span class="pulse-heart">❤️</span> por Stanley para Hadalia</p>
               </div>
             </div>
           </div>
@@ -195,8 +194,8 @@
           <!-- Efeito de aniversário -->
           <div id="calAnniversaryOverlay" class="cal-anniversary-overlay" style="display: none;">
             <div class="cal-anniversary-box" id="calAnniversaryBox">
-              🎉 FELIZ 2 MÊSES! 🎉
-              <div class="sub">O terceiro de uma vida inteira</div>
+                            🎉 FELIZ 4 MESES! 🎉
+                            <div class="sub">O quarto de uma vida inteira</div>
             </div>
           </div>
 
@@ -204,37 +203,36 @@
           <script>
                     (function() {
                         const messages = {
-                            1: "Hoje começa um novo mês para a gente continuar escrevendo nossa história. Que seja leve, cheio de amor e de momentos só nossos! ✨",
-                            2: "Hoje é nosso aniversário de 3 meses de namoro! Obrigado por me fazer tão feliz, por ser minha parceira, minha melhor amiga e o amor da minha vida. Cada dia ao seu lado é um presente, e eu quero viver todos os próximos com você. Te amo mais do que consigo explicar, minha  princesa. Obrigado por confiar em mim, por me apoiar, por ser você. Que venham muitos e muitos meses e anos juntinhos! Para sempre nós. 🤍",
-                            3: "Você é o meu primeiro pensamento do dia e o último antes de dormir. Te amo infinito!",
-                            4: "Se eu pudesse, te daria um abraço agora só pra sentir seu cheirinho e acalmar meu coração. ❤️",
-                            5: "Cada dia longe de você é um dia a menos para o nosso reencontro. Contando as horas! ",
-                            6: "Você é a razão do meu sorriso bobo e do meu coração acelerado. Nunca se esqueça disso! ❤️",
-                            7: "Queria te encher de beijos e te ver rindo das minhas piadas ruins. Sinto sua falta! ❤️",
-                            8: "Você é inspiração, força e delicadeza. Obrigado por ser essa mulher incrível na minha vida. 🌷",
-                            9: "Nosso futuro juntos é o meu maior sonho. Mal posso esperar para viver cada detalhe ao seu lado. 🤍",
-                            10: "Se o mundo desabar, prometo segurar sua mão e não soltar nunca. Somos mais fortes juntos! ❤️",
-                            11: "Hoje só quero que você se sinta amada, protegida e muito especial. Você é tudo pra mim!",
-                            12: "Fico imaginando nosso próximo encontro, o abraço apertado e o beijo demorado. Logo, logo! ❤️",
-                            13: "Queria dividir um lanche com você, dar risada e te abraçar até esquecer do mundo. Sinto sua falta! ❤️",
-                            14: "Quero acordar todos os dias ao seu lado, tomar café juntos e planejar nossa vida. 🤍🤍",
-                            15: "Meu coração nunca descansa de te amar. Você é meu abrigo e minha paz. 💖",
-                            16: "Você é minha inspiração diária. Que cada momento hoje seja repleto de amor, alegria e conquistas! 🤍🤍🤍",
-                            17: "Seu sorriso ilumina até os meus dias mais nublados. Nunca pare de sorrir pra mim! 😊",
-                            18: "Você é meu universo inteiro, minha melhor escolha, meu amor sem fim. ❤️",
-                            19: "Quero estar ao seu lado em todos os momentos, celebrando cada conquista e superando cada desafio. 🩷",
-                            20: "Só de pensar em você, meu coração já se enche de alegria. Obrigado por existir!",
-                            21: "Nosso amor é meu refúgio. Que hoje seja leve e cheio de carinho. 🥰",
-                            22: "Você é minha namorada, minha melhor amiga e minha parceira de vida. Te amo além das palavras! 💍",
-                            23: "Se o dia estiver difícil, lembra que tem alguém aqui que te ama mais que tudo. Conta comigo sempre! ❤️",
-                            24: "Meu maior presente é te ver feliz. Vou fazer de tudo para te ver sorrindo todos os dias. ",
-                            25: "Eu te amo mais que tudo minha princesa, para sempre nos!!! ❤️",
-                            26: "Você é poesia em forma de gente. Obrigado por colorir minha vida com tanto amor!",
-                            27: "O 'para sempre' é pouco pra nós. Quero viver mil vidas ao seu lado! ",
-                            28: "Hoje é dia de sonhar alto, planejar viagens e imaginar nosso futuro juntos. Amo sonhar com você!",
-                            29: "Mesmo longe, sinto você pertinho de mim. Nosso amor atravessa qualquer distância. ❤️",
-                            30: "Mais um mês vencido, mais um mês te amando. Obrigado por ser minha razão de viver! Eu te amo mais que tudo neste mundo, você é a melhor coisa que já me aconteceu, e eu sou tão grato por ter você na minha vida. Para sempre nós, meu amor! 💖",
-                            31: "Chegamos ao fim de mais um mês, mas nunca ao fim do nosso amor. Obrigado por ser minha inspiração diária. Que venha junho, com ainda mais momentos lindos pra gente! Te amo! 💜"
+                            1: "Junho começou, meu amor. Que esse novo mês seja cheio de carinho, cuidado e planos lindos para nós dois. ✨",
+                            2: "Hoje celebramos 4 meses de namoro! Obrigado por transformar minha vida com seu amor, seu cuidado e seu jeitinho único. Eu escolho você todos os dias e quero viver cada capítulo da nossa história ao seu lado. Te amo infinito, minha princesa. Que venham muitos meses, muitos anos e uma vida inteira de nós. 💖",
+                            3: "Você é meu pensamento favorito em qualquer momento. Amar você é a parte mais bonita da minha vida. ❤️",
+                            4: "Se eu pudesse te dar um abraço agora, eu ficava ali por horas só sentindo seu cheirinho e sua paz. 🤍",
+                            5: "A distância só confirma o quanto nosso amor é forte. Meu coração sempre encontra o caminho até você. 🤍",
+                            6: "Você é meu sorriso mais sincero, minha calma e meu lugar favorito no mundo. 💕",
+                            7: "Queria estar pertinho de você agora, te enchendo de beijo e fazendo carinho até você dormir. ❤️",
+                            8: "Você é força, beleza e luz. Obrigado por ser essa mulher incrível que me inspira tanto. 🌷❤️",
+                            9: "Sonhar com nosso futuro é uma das minhas partes favoritas. Eu amo imaginar cada detalhe com você. ❤️",
+                            10: "Prometo segurar sua mão em cada fase, em cada desafio e em cada conquista. Sempre juntos. para sempre nos!!!❤️❤️",
+                            11: "Quero que você sinta hoje o quanto é amada, admirada e importante para mim. Você é tudo. 💘",
+                            12: "Feliz Dia dos Namorados, meu amor! Você é o presente mais lindo que Deus me deu. Obrigado por cada conversa, cada cuidado, cada carinho e cada sonho compartilhado. Eu te amo profundamente e quero continuar construindo nossa história com muito respeito, parceria e amor sem fim. Para sempre nós. 🤍🤍🤍",
+                            13: "Seu amor deixa qualquer momento mais bonito. Você tem o dom de iluminar tudo em mim. ✨",
+                            14: "Eu te escolheria em todas as versões da vida. Você é meu destino favorito. ❤️",
+                            15: "Meu coração descansa quando pensa em você. Te amar é minha paz diária. 🤍",
+                            16: "Que seu dia seja leve, feliz e cheio de boas surpresas. Eu estou sempre na sua torcida! 🌹",
+                            17: "Seu sorriso é meu combustível. Só de lembrar dele, meu dia fica melhor. ❤️",
+                            18: "Você é minha melhor escolha e meu amor sem medida. Obrigado por existir. ❤️",
+                            19: "A vida com você no coração é mais bonita, mais doce e mais cheia de sentido. 💞",
+                            20: "Penso em você e já me vem aquele sorriso bobo. Você é minha alegria favorita. 😍",
+                            21: "Nosso amor é abrigo. Com você, até o caos vira calma. ❤️",
+                            22: "Você é minha namorada, minha melhor amiga e minha parceira pra tudo. Te amo demais! 💍",
+                            23: "Se o dia pesar, lembra que eu estou aqui por você, com amor, paciência e abraço aberto. ❤️",
+                            24: "Meu maior compromisso é cuidar do seu coração com carinho todos os dias. 💝",
+                            25: "Você merece o melhor da vida, e eu quero ser alguém que soma amor, paz e felicidade no seu caminho. 💖",
+                            26: "Você é poesia em forma de gente. Obrigado por colorir meus dias com amor verdadeiro. ❤️",
+                            27: "O para sempre parece pequeno quando penso em tudo que ainda quero viver ao seu lado. ❤️",
+                            28: "Amo planejar o futuro com você, sonhar alto e construir cada passo com parceria. Te amo demais, minha princesa. 💜",
+                            29: "Mesmo com quilômetros entre nós, meu coração continua pertinho do seu. ❤️",
+                            30: "Encerramos junho com mais amor do que no começo. Obrigado por ser minha melhor parte. Que o próximo mês venha ainda mais lindo para nós! 💜"
                         };
 
                         let selectedDay = 1;
@@ -244,9 +242,9 @@
                         const overlay = document.getElementById('calAnniversaryOverlay');
 
                         // Gerar botões dos dias
-                        // O dia 1 começa em uma sexta-feira (índice 5, pois 0=Dom)
-                        let startDay = 5; // 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sáb
-                        let totalDays = 31;
+                        // O dia 1 começa em uma segunda-feira
+                        let startDay = 1; // 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sáb
+                        let totalDays = 30;
                         // Preenche os dias vazios antes do dia 1
                         for (let i = 0; i < startDay; i++) {
                             const empty = document.createElement('div');
@@ -257,11 +255,12 @@
                             const btn = document.createElement('button');
                             let extraClass = '';
                             if (d === 1) extraClass = ' active';
-                            if (d === 2) extraClass += ' anniversary';
+                            if (d === 2 || d === 12) extraClass += ' anniversary';
                             btn.className = 'cal-day-btn' + extraClass;
                             btn.textContent = d;
                             btn.dataset.day = d;
                             if (d === 2) btn.innerHTML = d + '<span class="heart-mark">❤️</span>';
+                            if (d === 12) btn.innerHTML = d + '<span class="heart-mark">💝</span>';
                             btn.addEventListener('click', function() { selectDay(d); });
                             grid.appendChild(btn);
                         }
@@ -278,7 +277,11 @@
                             // Efeito aniversário e aniversário de nascimento
                             const box = document.getElementById('calAnniversaryBox');
                             if (day === 2) {
-                                box.innerHTML = '🎉 FELIZ 3 MESES! 🎉<div class="sub">O terceiro de uma vida inteira</div>';
+                                box.innerHTML = '🎉 FELIZ 4 MESES! 🎉<div class="sub">O quarto de uma vida inteira</div>';
+                                overlay.style.display = 'flex';
+                                setTimeout(function() { overlay.style.display = 'none'; }, 5000);
+                            } else if (day === 12) {
+                                box.innerHTML = '💝 FELIZ DIA DOS NAMORADOS! 💝<div class="sub">Você é meu amor favorito em cada detalhe da vida</div>';
                                 overlay.style.display = 'flex';
                                 setTimeout(function() { overlay.style.display = 'none'; }, 5000);
                             } else {
@@ -292,21 +295,20 @@
                 <!-- ====== SEÇÃO MÚSICA FAVORITA ====== -->
                 <section id="fav-music" style="margin: 48px auto 0; max-width: 500px;">
                     <div style="background: rgba(255,255,255,0.03); border-radius: 24px; padding: 32px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); text-align: center; border: 1px solid rgba(255,255,255,0.08);">
-                        <h2 style="font-family: 'Dancing Script', cursive; color: #ffd700; font-size: 2.2rem; margin-bottom: 18px;">Sua musica ❤️🎵</h2>
+                        <h2 style="font-family: 'Dancing Script', cursive; color: #ffd700; font-size: 2.2rem; margin-bottom: 18px;">Música Favorita 🎵</h2>
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 18px;">
                                                         <img src="assets/gunslinger/cover.jpg" alt="Capa Gunslinger Avenged Sevenfold" style="width: 180px; height: 180px; border-radius: 18px; box-shadow: 0 4px 24px #0008; object-fit: cover; border: 2px solid #fff;">
                                                         <div style="font-size: 1.1rem; color: #fff; font-weight: 700; margin-bottom: 2px;">Gunslinger</div>
                                                         <div style="font-size: 1rem; color: #ffd700; margin-bottom: 12px;">Avenged Sevenfold</div>
-                                                        <audio id="gunslinger-audio" preload="auto" style="display: none;">
+                                                        <audio id="gunslinger-audio" preload="auto" controls>
                                                             <source src="assets/gunslinger/gunslinger.mp3" type="audio/mpeg">
                                                             Seu navegador não suporta áudio.
                                                         </audio>
                                                         <button id="gunslinger-play-btn" style="background: #db2777; color: #fff; border: none; border-radius: 999px; padding: 14px 32px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 12px #db27777a; transition: background .2s; display: flex; align-items: center; gap: 10px;">
                                                                 <span id="gunslinger-play-icon">▶️</span> Ouvir agora
                                                         </button>
-                                                        <input id="gunslinger-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Barra de progresso da música" style="width: 100%; max-width: 340px; appearance: none; height: 8px; border-radius: 999px; background: linear-gradient(90deg, #ff3385 0%, #ff3385 0%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.18) 100%); outline: none; cursor: pointer;">
                         </div>
-                        <p style="color: #a3a3a3; font-size: .95rem; margin-top: 18px;">Clique no play para ouvir sua musica!</p>
+                        <p style="color: #a3a3a3; font-size: .95rem; margin-top: 18px;">Clique no play para ouvir a música favorita da Hadalia!</p>
                     </div>
                 </section>
                 <!-- ====== FIM SEÇÃO MÚSICA FAVORITA ====== -->
@@ -316,51 +318,28 @@
                         const audio = document.getElementById('gunslinger-audio');
                         const btn = document.getElementById('gunslinger-play-btn');
                         const icon = document.getElementById('gunslinger-play-icon');
-                        const progress = document.getElementById('gunslinger-progress');
-
-                        function updateProgressUI(value) {
-                            progress.style.background = 'linear-gradient(90deg, #ff3385 0%, #ff3385 ' + value + '%, rgba(255,255,255,0.18) ' + value + '%, rgba(255,255,255,0.18) 100%)';
-                        }
-
-                        if (btn && audio && icon && progress) {
-                            updateProgressUI(0);
-
+                        let isPlaying = false;
+                        if (btn && audio && icon) {
                             btn.addEventListener('click', function() {
                                 if (audio.paused) {
-                                    audio.play().then(function() {
-                                        icon.textContent = '⏸️';
-                                    }).catch(function() {
-                                        icon.textContent = '▶️';
-                                    });
+                                    audio.play();
+                                    icon.textContent = '⏸️';
+                                    isPlaying = true;
                                 } else {
                                     audio.pause();
                                     icon.textContent = '▶️';
+                                    isPlaying = false;
                                 }
                             });
-
-                            audio.addEventListener('timeupdate', function() {
-                                if (!audio.duration) return;
-                                const value = (audio.currentTime / audio.duration) * 100;
-                                progress.value = value;
-                                updateProgressUI(value);
-                            });
-
-                            progress.addEventListener('input', function() {
-                                if (!audio.duration) return;
-                                const nextTime = (progress.value / 100) * audio.duration;
-                                audio.currentTime = nextTime;
-                                updateProgressUI(progress.value);
-                            });
-
                             audio.addEventListener('ended', function() {
                                 icon.textContent = '▶️';
-                                progress.value = 0;
-                                updateProgressUI(0);
+                                isPlaying = false;
                             });
                         }
                     })();
                     </script>
-                <p class="letters-description">(Clique várias vezes nos envelopes, as mensagens mudam!)</p>
+                (Clique várias vezes nos envelopes, as mensagens mudam!)
+            </p>
 
             <div class="letters-grid">
                 <article class="envelope" onclick="openRandomLetter('triste', 'Quando estiver triste 😢')" role="button"
@@ -698,6 +677,33 @@
                     behavior: 'smooth'
                 });
             }
+                    </script>
+                    <script>
+                    // Player Gunslinger
+                    (function() {
+                        const audio = document.getElementById('gunslinger-audio');
+                        const btn = document.getElementById('gunslinger-play-btn');
+                        const icon = document.getElementById('gunslinger-play-icon');
+                        let isPlaying = false;
+                        if (btn && audio && icon) {
+                            btn.addEventListener('click', function() {
+                                if (audio.paused) {
+                                    audio.play();
+                                    icon.textContent = '⏸️';
+                                    btn.querySelector('span + span')?.remove();
+                                    isPlaying = true;
+                                } else {
+                                    audio.pause();
+                                    icon.textContent = '▶️';
+                                    isPlaying = false;
+                                }
+                            });
+                            audio.addEventListener('ended', function() {
+                                icon.textContent = '▶️';
+                                isPlaying = false;
+                            });
+                        }
+                    })();
                     </script>
         <section class="rest-section">
             <div class="relax-box">
