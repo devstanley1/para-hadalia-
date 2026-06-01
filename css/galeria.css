@@ -188,6 +188,10 @@ body {
     padding: 20px;
 }
 
+.zoom-modal[hidden] {
+    display: none !important;
+}
+
 .zoom-image {
     max-width: min(92vw, 980px);
     max-height: 84vh;
