@@ -5,7 +5,6 @@ const SUPABASE_TABLE = 'gallery_photos';
 
 const addPhotosBtn = document.getElementById('addPhotosBtn');
 const clearPhotosBtn = document.getElementById('clearPhotosBtn');
-const exportGalleryBtn = document.getElementById('exportGalleryBtn');
 const galleryFileInput = document.getElementById('galleryFileInput');
 const cameraFileInput = document.getElementById('cameraFileInput');
 const galleryGrid = document.getElementById('galleryGrid');
@@ -564,31 +563,6 @@ function bindEvents() {
         cancelPublishBtn.addEventListener('click', () => {
             pendingFiles = [];
             renderCaptionComposer();
-        });
-    }
-
-    if (exportGalleryBtn) {
-        exportGalleryBtn.addEventListener('click', () => {
-            const photos = loadPhotos();
-            if (photos.length === 0) {
-                alert('Nao ha fotos para exportar.');
-                return;
-            }
-
-            const payload = {
-                version: 1,
-                exportedAt: new Date().toISOString(),
-                photos
-            };
-
-            const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'museu-da-deusa-galeria.json';
-            document.body.appendChild(link);
-            link.click();
-            link.remove();
-            URL.revokeObjectURL(link.href);
         });
     }
 
