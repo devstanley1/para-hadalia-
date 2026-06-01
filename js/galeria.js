@@ -6,10 +6,8 @@ const SUPABASE_TABLE = 'gallery_photos';
 const addPhotosBtn = document.getElementById('addPhotosBtn');
 const clearPhotosBtn = document.getElementById('clearPhotosBtn');
 const exportGalleryBtn = document.getElementById('exportGalleryBtn');
-const importGalleryBtn = document.getElementById('importGalleryBtn');
 const galleryFileInput = document.getElementById('galleryFileInput');
 const cameraFileInput = document.getElementById('cameraFileInput');
-const galleryImportInput = document.getElementById('galleryImportInput');
 const galleryGrid = document.getElementById('galleryGrid');
 const emptyGallery = document.getElementById('emptyGallery');
 const zoomModal = document.getElementById('zoomModal');
@@ -591,38 +589,6 @@ function bindEvents() {
             link.click();
             link.remove();
             URL.revokeObjectURL(link.href);
-        });
-    }
-
-    if (importGalleryBtn && galleryImportInput) {
-        importGalleryBtn.addEventListener('click', () => galleryImportInput.click());
-        galleryImportInput.addEventListener('change', async (event) => {
-            const file = event.target.files && event.target.files[0];
-            if (!file) {
-                return;
-            }
-
-            try {
-                const text = await file.text();
-                const parsed = JSON.parse(text);
-                const incoming = normalizePhotos(parsed.photos);
-
-                if (incoming.length === 0) {
-                    alert('Arquivo invalido ou sem fotos.');
-                    return;
-                }
-
-                persistPhotos(incoming.slice(0, 120));
-                selectionMode = false;
-                selectedIndexes = new Set();
-                renderGallery();
-                alert('Galeria importada com sucesso neste celular.');
-            } catch (error) {
-                console.error('Erro ao importar galeria:', error);
-                alert('Nao foi possivel importar esse arquivo.');
-            } finally {
-                galleryImportInput.value = '';
-            }
         });
     }
 
