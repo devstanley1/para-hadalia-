@@ -1,38 +1,33 @@
 const bouquetPhotos = [
     {
         src: '../assets/buque/IMG-20260220-WA0118(2).jpg',
-        title: 'Buquê 1',
-        caption: 'Um buquê para marcar um momento lindo da nossa história.'
-    },
-    {
-        src: '../assets/buque/IMG-20260721-WA0055.jpg',
-        title: 'Buquê 2',
-        caption: 'Flores escolhidas com carinho para ela sorrir ainda mais.'
+        title: 'o primeiro buquê',
+        caption: 'Um buquê para marcar um momento lindo da nossa história.❤️❤️❤️'
     },
     {
         src: '../assets/buque/IMG-20260722-WA0041.jpg',
-        title: 'Buquê 3',
-        caption: 'Mais um gesto de amor entregue em forma de flores.'
+        title: 'Buque avenged sevenfold',
+        caption: 'Mais um gesto de amor entregue em forma de flores com a banda favorita da minha Deusa.🤍🖤🤍🖤'
     },
     {
         src: '../assets/buque/IMG-20260722-WA0040.jpg',
-        title: 'Buquê 4',
-        caption: 'Cada detalhe desse buquê foi pensando nela.'
+        title: 'Buque macaquitos',
+        caption: 'Cada detalhe desse buquê foi pensando em você, com os macaquitos que você tanto ama 💜💜💜.'
     },
     {
         src: '../assets/buque/IMG-20260722-WA0043.jpg',
-        title: 'Buquê 5',
-        caption: 'Um buquê para lembrar que amar também é surpreender.'
+        title: 'Buque do aniversário da minha princesinha',
+        caption: 'Um buque para celebrar o aniversario da pessoa que eu mais amo, e a mais especial, importante e preciosa da minha vida.💘💘💘'
     },
     {
         src: '../assets/buque/IMG-20260722-WA0044.jpg',
-        title: 'Buquê 6',
-        caption: 'Flores para deixar o dia dela ainda mais bonito.'
+        title: 'Buque para lembrar o quanto ela é especial',
+        caption: 'Flores para deixar o seu dia ainda mais bonito.❤️❤️❤️'
     },
     {
         src: '../assets/buque/VID-20260722-WA0042.jpg',
-        title: 'Buquê 7',
-        caption: 'Mais um buquê entregue com amor de verdade.'
+        title: 'Buque da helllo kitty',
+        caption: 'Mais um buquê entregue com amor de verdade, tematico da hello kitty que minha princesinha ama muitooo, seu favorito.🩷🩷🩷'
     }
 ];
 
