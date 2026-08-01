@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galeria dos buquês entregues">
+    <title>Galeria dos Buquês 🌷</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/buques.css">
+</head>
+<body>
+    <div class="bouquet-top" aria-hidden="true">
+        <img src="../assets/hello%20kitty.gif" alt="">
+        <img src="../assets/hello%20kitty.gif" alt="">
+        <img src="../assets/hello%20kitty.gif" alt="">
+    </div>
+
+    <main class="bouquet-page">
+        <header class="bouquet-header">
+            <a class="back-btn" href="../index.html">Voltar</a>
+            <h1>galeria dos buquês 🌷</h1>
+            <p>Os buquês que já chegaram até ela, guardados em um cantinho especial.</p>
+        </header>
+
+        <section class="bouquet-intro">
+            <div class="intro-card">
+                <span class="intro-label">Coleção romântica</span>
+                <h2>Cada flor, uma lembrança</h2>
+                <p>Uma galeria estática para registrar os buquês que eu já entreguei para a minha princesa.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="bouquet-grid" id="bouquetGrid" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <div id="zoomModal" class="zoom-modal" hidden>
+        <button id="closeZoomBtn" class="zoom-close-btn" aria-label="Fechar visualizacao">×</button>
+        <img id="zoomImage" class="zoom-image" alt="Buquê ampliado">
+        <div class="zoom-caption" id="zoomCaption"></div>
+    </div>
+
+    <script src="../js/buques.js"></script>
+</body>
+</html>

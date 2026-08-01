@@ -1,0 +1,230 @@
+:root {
+    --bg-color: #110f12;
+    --card-bg: #1b161a;
+    --primary-color: #f59e0b;
+    --text-color: #f5f1eb;
+    --muted: #b8ab9b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.18), transparent 26%),
+        linear-gradient(180deg, #171114 0%, #110f12 100%);
+    color: var(--text-color);
+    font-family: 'Nunito', sans-serif;
+}
+
+.bouquet-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 12px 0;
+}
+
+.bouquet-top img {
+    width: 68px;
+    opacity: 0.9;
+}
+
+.bouquet-page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 18px 20px 42px;
+}
+
+.bouquet-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 14px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+}
+
+.bouquet-header h1 {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    color: #ffd7ab;
+}
+
+.bouquet-header p {
+    margin: 8px auto 0;
+    max-width: 640px;
+    color: var(--muted);
+}
+
+.bouquet-intro {
+    margin-bottom: 22px;
+}
+
+.intro-card {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 24px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(236, 72, 153, 0.1));
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.intro-card::after {
+    content: '';
+    position: absolute;
+    inset: auto -40px -50px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(245, 158, 11, 0.12);
+    filter: blur(16px);
+}
+
+.intro-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffddb3;
+    margin-bottom: 8px;
+}
+
+.intro-card h2 {
+    margin: 0 0 8px;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.intro-card p {
+    margin: 0;
+    color: #d7c9bc;
+    max-width: 760px;
+}
+
+.bouquet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+}
+
+.bouquet-card {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: zoom-in;
+}
+
+.bouquet-card:hover {
+    transform: rotate(0deg) translateY(-4px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+.bouquet-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.bouquet-card-footer {
+    padding: 10px 12px 12px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18));
+}
+
+.bouquet-card-footer strong {
+    display: block;
+    font-size: 0.92rem;
+}
+
+.bouquet-card-footer span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 4px;
+}
+
+.zoom-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.zoom-modal[hidden] {
+    display: none !important;
+}
+
+.zoom-image {
+    max-width: min(92vw, 980px);
+    max-height: 76vh;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.88);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-caption {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: min(92vw, 700px);
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(17, 15, 18, 0.82);
+    color: #f4eadf;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
+    font-size: 0.92rem;
+}
+
+.zoom-close-btn {
+    position: fixed;
+    top: 16px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .bouquet-top img {
+        width: 52px;
+    }
+
+    .bouquet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+    }
+
+    .zoom-image {
+        max-height: 68vh;
+    }
+}
