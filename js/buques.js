@@ -28,6 +28,11 @@ const bouquetPhotos = [
         src: '../assets/buque/VID-20260722-WA0042.jpg',
         title: 'Buque da helllo kitty',
         caption: 'Mais um buquê entregue com amor de verdade, tematico da hello kitty que minha princesinha ama muitooo, seu favorito.🩷🩷🩷'
+    },
+    {
+        src: '../assets/buque/buque van gogh.jpg',
+        title: 'Buque van gogh',
+        caption: 'Um buquê inspirado na bela arte de Van Gogh, para a minha princesa que é a arte mais bela de Deus.🌻💛'
     }
 ];
 
