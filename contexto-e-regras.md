@@ -70,5 +70,14 @@ A conversa começou com a atualização do calendário para um novo mês, com re
 - A linguagem dos títulos e descrições foi ajustada para ser mais emocional e mais vinculada à história.
 - O buquê “Van Gogh” foi adicionado com descrição baseada na temática artística e no brilho emocional do relacionamento.
 
+## Atualizações recentes
+### 2026-09-01
+- Ajuste final do calendário para setembro.
+- Confirmação do dia 2 como aniversário de 7 meses de namoro.
+- Atualização do overlay para exibir: “FELIZ 7 MESES!” com a frase “Sete meses de um amor que só cresce”.
+- Reformulação das mensagens do mês para manter a consistência emocional e o estilo do projeto.
+- Adição do buquê “Van Gogh” à galeria, com descrição temática baseada no universo artístico da obra.
+- Criação deste arquivo como registro oficial do contexto, regras e histórico da conversa.
+
 ## Conclusão
 Este documento serve como referência para manter a continuidade do projeto, preservando o estilo, as regras e a história da relação que esse site representa.
