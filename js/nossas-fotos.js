@@ -1,21 +1,8 @@
 const mediaFiles = [
     '20260906_151623.jpg',
-    'v1c43ag5000cdagam2fog65pm4dgnlh0.mp4',
-    'VID_20260908_080326_918.mp4',
-    'VID-20260906-WA0029(1).mp4',
-    'VID-20260906-WA0030.mp4',
-    'VID-20260906-WA0077.mp4',
-    'VID-20260906-WA0078.mp4',
-    'VID-20260906-WA0079(1).mp4',
-    'VID-20260906-WA0079.mp4',
-    'VID-20260907-WA0052.mp4',
     '20260906_181119.jpg',
     '20260907_131339.jpg',
     '20260907_171628_001.jpg',
-    'VID_20260908_080318_613.mp4',
-    'VID-20260906-WA0028.mp4',
-    'VID-20260907-WA0048.mp4',
-    'VID-20260907-WA0050.mp4',
     'IMG-20260906-WA0066.jpg',
     'IMG-20260906-WA0091.jpg',
     'IMG-20260906-WA0021.jpg',
@@ -90,21 +77,12 @@ mediaFiles.forEach((file, index) => {
     card.className = 'memory-card';
     card.style.setProperty('--tilt', `${((index % 5) - 2) * 0.8}deg`);
 
-    if (file.toLowerCase().endsWith('.mp4')) {
-        const video = document.createElement('video');
-        video.src = path;
-        video.controls = true;
-        video.preload = 'metadata';
-        video.playsInline = true;
-        card.appendChild(video);
-    } else {
-        const image = document.createElement('img');
-        image.src = path;
-        image.alt = `Nossa memória ${index + 1}`;
-        image.loading = 'lazy';
-        image.addEventListener('click', () => openZoom(path));
-        card.appendChild(image);
-    }
+    const image = document.createElement('img');
+    image.src = path;
+    image.alt = `Nossa memória ${index + 1}`;
+    image.loading = 'lazy';
+    image.addEventListener('click', () => openZoom(path));
+    card.appendChild(image);
 
     memoriesGrid.appendChild(card);
 });
