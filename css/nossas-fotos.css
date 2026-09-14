@@ -58,7 +58,8 @@ body {
 
 .memory-card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45); }
 
-.memory-card img {
+.memory-card img,
+.memory-card video {
     display: block;
     width: 100%;
     aspect-ratio: 1 / 1;
