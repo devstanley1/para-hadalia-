@@ -33,11 +33,6 @@ const bouquetPhotos = [
         src: '../assets/buque/buque van gogh.jpg',
         title: 'Buque van gogh',
         caption: 'Um buquê inspirado na bela arte de Van Gogh, para a minha princesa que é a arte mais bela de Deus.🌻💛'
-    },
-    {
-        src: '../assets/buque/IMG-20260913-WA0022.jpg',
-        title: '06/09🤍',
-        caption: 'O buque do dia que a gente se reencontrou e fiz o pedido de namoro pessoalmente 🤍🤍🤍'
     }
 ];
 
