@@ -18,6 +18,7 @@ A conversa começou com a atualização do calendário para um novo mês, com re
 - O dia 2 deve ser tratado como o destaque do aniversário do relacionamento.
 - O texto do dia 2 deve sempre reforçar o marco do namoro com a frase de aniversário do relacionamento.
 - O calendário deve seguir uma estrutura de mensagens de amor, carinho e gratidão, sempre com tom pessoal e íntimo.
+- As mensagens novas devem usar somente emojis que já aparecem nas mensagens existentes, sem introduzir emojis novos.
 - As atualizações devem manter consistência entre:
   - cabeçalho do mês
   - texto da legenda
@@ -63,6 +64,8 @@ A conversa começou com a atualização do calendário para um novo mês, com re
 - O dia 2 foi sempre reforçado como marco importante do relacionamento.
 - Houve necessidade de corrigir uma atualização parcial em que o cabeçalho já estava em setembro, mas os textos internos ainda refletiam agosto e 6 meses.
 - A correção final foi feita para garantir que o calendário refletisse setembro e 7 meses de namoro.
+- Em outubro de 2026, o dia 1 começa em uma quinta-feira e o dia 31 termina em um sábado.
+- O dia 2 de outubro representa o aniversário de 8 meses de namoro.
 
 ### Galeria de buquês
 - A galeria foi criada com uma coleção de fotos pessoais e textos dedicados.
@@ -78,6 +81,13 @@ A conversa começou com a atualização do calendário para um novo mês, com re
 - Reformulação das mensagens do mês para manter a consistência emocional e o estilo do projeto.
 - Adição do buquê “Van Gogh” à galeria, com descrição temática baseada no universo artístico da obra.
 - Criação deste arquivo como registro oficial do contexto, regras e histórico da conversa.
+
+### 2026-10-02
+- Atualização do calendário para outubro de 2026.
+- Alteração do calendário para 31 dias, começando na quinta-feira, dia 1, e terminando no sábado, dia 31.
+- Atualização do aniversário do dia 2 para 8 meses de namoro.
+- Atualização do overlay para exibir “FELIZ 8 MESES!” e “Oito meses de um amor que só cresce”.
+- Reformulação das 31 mensagens de outubro mantendo o tom romântico e usando somente emojis já presentes nas mensagens anteriores.
 
 ## Conclusão
 Este documento serve como referência para manter a continuidade do projeto, preservando o estilo, as regras e a história da relação que esse site representa.
