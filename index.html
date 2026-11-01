@@ -135,9 +135,9 @@
               <div class="cal-header">
                 <div class="cal-badge">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    <span>outubro 2026</span>
+                                    <span>novembro 2026</span>
                 </div>
-                                <h2>31 Dias de Nós</h2>
+                                <h2>30 Dias de Nós</h2>
                 <p>"De Agricolândia para Brasília: um calendário feito de promessas, cuidado e o sonho da nossa família."</p>
               </div>
 
@@ -149,7 +149,7 @@
                   </div>
                   <div class="cal-days-grid" id="calDaysGrid"></div>
                                     <div class="cal-footer">
-                                        <div><span class="cal-footer-dot"></span> Nosso oitavo mês de namoro (2 de outubro)</div>
+                                        <div><span class="cal-footer-dot"></span> Nosso nono mês de namoro (2 de novembro)</div>
                                         <span>Agricolândia ↔ Brasília</span>
                                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <div class="bg-heart">❤️</div>
                     <div style="position: relative; z-index: 1;">
                       <div class="msg-label">⭐ Mensagem do Dia <span id="calMsgDay">1</span></div>
-                                              <p class="msg-text" id="calMsgText">"Outubro começou, meu amor. Que esse novo mês traga mais carinho, paz e momentos bonitos para a nossa história. ❤️"</p>
+                                              <p class="msg-text" id="calMsgText">"Novembro começou, meu amor. Que este novo mês traga mais carinho, paz e momentos bonitos para a nossa história. ❤️"</p>
                       <div class="msg-bar"></div>
                     </div>
                   </div>
@@ -193,8 +193,8 @@
           <!-- Efeito de aniversário -->
           <div id="calAnniversaryOverlay" class="cal-anniversary-overlay" style="display: none;">
             <div class="cal-anniversary-box" id="calAnniversaryBox">
-                                                        🎉 FELIZ 8 MESES! 🎉
-                                                        <div class="sub">Oito meses de um amor que só cresce</div>
+                                                        🎉 FELIZ 9 MESES! 🎉
+                                                        <div class="sub">Nove meses de um amor que só cresce</div>
             </div>
           </div>
 
@@ -202,37 +202,36 @@
           <script>
                     (function() {
                         const messages = {
-                            1: "Outubro começou, meu amor. Que esse novo mês traga mais carinho, paz e momentos bonitos para a nossa história. ❤️",
-                            2: "Hoje celebramos 8 meses de namoro! Obrigado por ser meu carinho diário, minha paz, minha alegria e a mulher mais linda da minha vida. Você é o melhor presente que eu poderia ter. 🤍🤍🤍",
-                            3: "Oito meses de nós e eu continuo tendo certeza de que amar você é a melhor escolha da minha vida. ❤️",
-                            4: "Se eu pudesse, te abraçaria agora e guardaria você comigo até o mundo ficar tranquilo. 🤍",
-                            5: "A distância só me faz perceber ainda mais o quanto o nosso amor é forte e verdadeiro. ❤️",
-                            6: "Você é meu lugar favorito, meu pensamento mais bonito e a paz que eu procuro todos os dias. 💕",
-                            7: "Queria estar ao seu lado para cuidar de você, te fazer sorrir e te dar um abraço demorado. ❤️",
-                            8: "Você tem uma luz própria, uma beleza e uma força que me fazem admirar você cada vez mais. 🌷",
-                            9: "Quando imagino nosso futuro, meu coração fica tranquilo porque eu sei que quero viver tudo com você. 🤍",
-                            10: "Prometo continuar escolhendo você com paciência, respeito, cuidado e todo o amor que existe em mim. ❤️",
-                            11: "Nunca se esqueça: você é profundamente amada e ocupa um lugar único no meu coração. 💘",
-                            12: "Seu amor transforma meus dias e faz cada pequeno momento ter mais sentido. 🤍",
-                            13: "Agradeço a Deus por ter colocado você na minha vida e por me permitir amar uma mulher tão especial. 🙏❤️",
-                            14: "Eu escolheria você em qualquer tempo, em qualquer lugar e em qualquer versão da nossa história. ❤️",
-                            15: "Pensar em você acalma meu coração, porque amar você é a minha forma preferida de encontrar paz. 🤍",
-                            16: "Que hoje seja leve e bonito para você. Eu estarei sempre torcendo pela sua felicidade. 🌹",
-                            17: "Seu sorriso é capaz de melhorar meu dia mesmo quando estamos longe. ❤️",
-                            18: "Você é minha melhor escolha, meu abraço favorito e a pessoa com quem eu quero dividir a vida. 💞",
-                            19: "Nossa história fica mais bonita a cada cuidado, cada conversa e cada sonho que dividimos. ✨",
-                            20: "Você aparece nos meus pensamentos e imediatamente transforma saudade em um sorriso. 😍",
-                            21: "Nosso amor é meu abrigo, e com você eu encontro força até nos dias mais difíceis. ❤️",
-                            22: "Você é minha namorada, minha melhor amiga, a mulher da minha vida e minha parceira para tudo. 💍",
-                            23: "Se o seu dia ficar pesado, lembre que meu carinho está com você em pensamento e oração. ❤️",
-                            24: "Quero cuidar do seu coração com delicadeza, presença e um amor cada vez mais verdadeiro. 💝",
-                            25: "Você merece toda a felicidade do mundo, e eu quero continuar somando amor e paz à sua vida. 💖",
-                            26: "Você é poesia na minha vida, e eu sou muito feliz por poder chamar você de meu amor. ❤️",
-                            27: "O para sempre começa nas pequenas escolhas, e eu escolho você em cada uma delas. 🤍",
-                            28: "Amo imaginar nossa casa, nossa família e todos os sonhos que ainda vamos realizar juntos. 💜",
-                            29: "Mesmo longe, meu coração continua encontrando o seu em cada lembrança e em cada saudade. ❤️",
-                            30: "Outubro está quase terminando, mas meu amor por você continua crescendo em todos os detalhes. 💖",
-                            31: "Encerramos outubro com gratidão por mais um mês da nossa história. Que venham muitos outros ao seu lado. 💜"
+                            1: "Novembro começou, meu amor. Que este novo mês traga mais carinho, paz e momentos bonitos para a nossa história. ❤️",
+                            2: "Hoje celebramos 9 meses de namoro! Obrigado por ser meu carinho diário, minha paz, minha alegria e a mulher mais linda do mundo. Você é o melhor presente que eu poderia ter. 🤍🤍🤍",
+                            3: "Nove meses de nós e eu continuo tendo certeza de que amar você é a melhor escolha da minha vida. ❤️",
+                            4: "Mesmo nos dias comuns, você consegue fazer meu coração perceber o quanto a nossa história é especial. 🤍",
+                            5: "Cada conversa com você deixa meu dia mais bonito e me lembra que o nosso amor atravessa qualquer distância. ❤️",
+                            6: "Eu amo a maneira como você torna a minha vida mais leve apenas sendo exatamente quem você é. 💕",
+                            7: "Meu desejo para hoje é que você se sinta tão amada quanto é, porque meu coração inteiro pertence a você. ❤️",
+                            8: "Há uma delicadeza em você que transforma tudo ao seu redor e faz meu mundo florescer. 🌷",
+                            9: "Quando penso em tudo que ainda vamos viver, sinto uma paz bonita por saber que será ao seu lado. 🤍",
+                            10: "Eu quero continuar cuidando de nós com sinceridade, paciência e o mesmo amor que me aproxima de você todos os dias. ❤️",
+                            11: "Você é uma daquelas raridades que a vida entrega uma vez, e eu agradeço por ter encontrado você. 💘",
+                            12: "Seu jeito de amar me ensina que felicidade também mora nos detalhes mais simples. 🤍",
+                            13: "Agradeço a Deus por cada lembrança nossa e por me permitir construir um amor tão bonito com você. 🙏❤️",
+                            14: "Se pudesse voltar ao começo, eu escolheria você outra vez, com a mesma certeza e ainda mais amor. ❤️",
+                            15: "Meu coração descansa quando ouve sua voz, porque você é a paz que eu sempre quero encontrar. 🤍",
+                            16: "Que uma flor imaginária acompanhe seu dia e lembre você do carinho que envio de longe. 🌹",
+                            17: "O seu sorriso mora nos meus pensamentos e consegue iluminar até os momentos em que a saudade aperta. ❤️",
+                            18: "Entre tantas possibilidades, a vida me deu você, e essa continua sendo a minha escolha mais bonita. 💞",
+                            19: "Cada plano, cada conversa e cada cuidado nosso acrescenta uma nova beleza à nossa história. ✨",
+                            20: "Basta lembrar de você para a saudade se transformar em vontade de sorrir e agradecer pelo nosso amor. 😍",
+                            21: "Quando o mundo parecer difícil, lembre que existe em mim um coração sempre pronto para acolher você. ❤️",
+                            22: "Você é a pessoa com quem quero compartilhar as vitórias, os recomeços e todos os capítulos da minha vida. 💍",
+                            23: "Espero que hoje você sinta meu carinho em cada pensamento, como uma companhia mesmo quando estivermos longe. ❤️",
+                            24: "Amar você é cuidar dos seus sonhos, respeitar seu coração e celebrar cada pequena conquista sua. 💝",
+                            25: "Eu quero ser presença, apoio e amor nos seus dias, ajudando a tornar sua vida ainda mais feliz. 💖",
+                            26: "Você coloca poesia nos meus dias e faz qualquer futuro parecer mais bonito quando imagino nós dois. ❤️",
+                            27: "Nosso amor cresce nas escolhas de todos os dias, e eu continuo escolhendo você com todo o meu coração. 🤍",
+                            28: "Imaginar nosso lar, nossa família e nossas futuras lembranças é um dos meus sonhos mais queridos. 💜",
+                            29: "A saudade prova o tamanho do que sentimos, mas também me lembra que nosso amor sempre encontra um caminho. ❤️",
+                            30: "Novembro termina, mas meu amor por você continua crescendo em cada detalhe da nossa história. 💖"
                         };
 
                         let selectedDay = 1;
@@ -242,9 +241,9 @@
                         const overlay = document.getElementById('calAnniversaryOverlay');
 
                         // Gerar botões dos dias
-                        // O dia 1 começa em uma quinta-feira
-                        let startDay = 4; // 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sáb
-                        let totalDays = 31;
+                        // O dia 1 começa em um domingo
+                        let startDay = 0; // 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sáb
+                        let totalDays = 30;
                         // Preenche os dias vazios antes do dia 1
                         for (let i = 0; i < startDay; i++) {
                             const empty = document.createElement('div');
@@ -276,7 +275,7 @@
                             // Efeito de aniversário de namoro
                             const box = document.getElementById('calAnniversaryBox');
                             if (day === 2) {
-                                box.innerHTML = '🎉 FELIZ 8 MESES! 🎉<div class="sub">Oito meses de um amor que só cresce</div>';
+                                box.innerHTML = '🎉 FELIZ 9 MESES! 🎉<div class="sub">Nove meses de um amor que só cresce</div>';
                                 overlay.style.display = 'flex';
                                 setTimeout(function() { overlay.style.display = 'none'; }, 5000);
                             } else {
