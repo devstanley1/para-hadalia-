@@ -38,6 +38,11 @@ const bouquetPhotos = [
         src: '../assets/buque/IMG-20260913-WA0022.jpg',
         title: '06/09🤍',
         caption: 'O buque do dia que a gente se reencontrou e fiz o pedido de namoro pessoalmente 🤍🤍🤍'
+    },
+    {
+        src: '../assets/buque/BUQUE 0.9.jpg',
+        title: '0.9 🤍💍',
+        caption: 'o buque do nosso nono mes de uma eternidade juntos 🤍🤍🤍'
     }
 ];
 
