@@ -97,6 +97,9 @@ A conversa começou com a atualização do calendário para um novo mês, com re
 - Reformulação das mensagens de novembro para manter o tom romântico, pessoal e íntimo do projeto.
 - Substituição das mensagens dos dias 4 a 29, que ainda estavam iguais às do mês anterior.
 - Manutenção dos emojis já utilizados nas mensagens anteriores, sem introduzir novos emojis.
+- Adição de uma tela de inicialização ao site, com coração pulsante, partículas animadas, botão de entrada e transição de expansão do coração.
+- Inclusão de entrada acessível pela tecla Enter ou Espaço e bloqueio temporário da rolagem durante a animação inicial.
+- Inclusão do novo buquê “0.9 🤍💍” na galeria, com a descrição “O buque do nosso nono mes de uma eternidade juntos 🤍🤍🤍”.
 
 ## Conclusão
 Este documento serve como referência para manter a continuidade do projeto, preservando o estilo, as regras e a história da relação que esse site representa.
