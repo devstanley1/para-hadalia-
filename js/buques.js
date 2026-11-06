@@ -42,7 +42,7 @@ const bouquetPhotos = [
     {
         src: '../assets/buque/BUQUE 0.9.jpg',
         title: '0.9 🤍💍',
-        caption: 'o buque do nosso nono mes de uma eternidade juntos 🤍🤍🤍'
+        caption: 'O buque do nosso nono mes de uma eternidade juntos 🤍🤍🤍'
     }
 ];
 
