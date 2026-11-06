@@ -18,12 +18,131 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        @keyframes splash-pulse-grow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(224, 72, 99, .4)); }
+            50% { transform: scale(1.15); filter: drop-shadow(0 0 30px rgba(224, 72, 99, .8)); }
+        }
+
+        @keyframes splash-explode-heart {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(60); opacity: 0; }
+        }
+
+        @keyframes splash-float-particle {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+            20% { opacity: .8; }
+            100% { transform: translateY(-100vh) translateX(40px) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes splash-pulse-text {
+            0%, 100% { opacity: .65; }
+            50% { opacity: 1; }
+        }
+
+        body.splash-active { overflow: hidden; }
+        .splash-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #420b17, #781d30, #420b17);
+            color: #fff;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .splash-screen.is-hiding { opacity: 0; pointer-events: none; }
+        .splash-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+        .splash-particle {
+            position: absolute;
+            pointer-events: none;
+            color: #e04863;
+            animation: splash-float-particle 4s linear infinite;
+        }
+
+        .splash-heart-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .splash-heart-glow {
+            position: absolute;
+            inset: -40px;
+            border-radius: 50%;
+            background: rgba(224, 72, 99, .2);
+            filter: blur(32px);
+            transition: background .5s ease;
+        }
+
+        .splash-heart-wrapper:hover .splash-heart-glow { background: rgba(224, 72, 99, .4); }
+        .splash-main-heart {
+            position: relative;
+            color: #e04863;
+            font-size: clamp(5rem, 18vw, 8rem);
+            line-height: 1;
+            animation: splash-pulse-grow 1.8s infinite ease-in-out;
+        }
+
+        .splash-main-heart.is-exploding { animation: splash-explode-heart 1.1s cubic-bezier(.77, 0, .175, 1) forwards; }
+        .splash-copy { margin-top: 2rem; text-align: center; }
+        .splash-title { color: #f9d2d9; font-family: 'Dancing Script', cursive; font-size: clamp(2.2rem, 8vw, 3rem); }
+        .splash-instruction { margin-top: .5rem; color: rgba(244, 171, 184, .8); font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; animation: splash-pulse-text 2s infinite; }
+        .splash-enter {
+            position: relative;
+            z-index: 1;
+            margin-top: 3rem;
+            padding: .8rem 2rem;
+            border: 1px solid rgba(244, 171, 184, .3);
+            border-radius: 999px;
+            background: #cc2d4a;
+            color: #fff;
+            cursor: pointer;
+            font: 700 .8rem 'Nunito', sans-serif;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(224, 72, 99, .5);
+            transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+        }
+
+        .splash-enter:hover { background: #e04863; transform: translateY(-2px); box-shadow: 0 0 30px rgba(224, 72, 99, .8); }
+        .splash-enter:active { transform: translateY(0); }
+    </style>
 </head>
 
-<body>
+<body class="splash-active">
+    <div id="splash-screen" class="splash-screen" role="dialog" aria-label="Tela de entrada">
+        <div id="splash-particles" class="splash-particles" aria-hidden="true"></div>
+
+        <div id="splash-heart-wrapper" class="splash-heart-wrapper" role="button" tabindex="0" aria-label="Entrar no site">
+            <div class="splash-heart-glow"></div>
+            <div id="splash-main-heart" class="splash-main-heart" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="splash-copy">
+                <h1 class="splash-title">Hadalia &amp; Stanley</h1>
+                <p class="splash-instruction">Toque no coração para entrar</p>
+            </div>
+        </div>
+
+        <button id="splash-enter" class="splash-enter" type="button">
+            Entrar no site <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="hero-title-row">
@@ -957,6 +1076,55 @@
     </div>
 
     <!-- Scripts -->
+    <script>
+        (function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const heartWrapper = document.getElementById('splash-heart-wrapper');
+            const mainHeart = document.getElementById('splash-main-heart');
+            const enterButton = document.getElementById('splash-enter');
+            const particlesContainer = document.getElementById('splash-particles');
+            let transitionStarted = false;
+
+            for (let index = 0; index < 20; index++) {
+                const particle = document.createElement('div');
+                particle.className = 'splash-particle';
+                particle.innerHTML = '<i class="fa-solid fa-heart"></i>';
+                particle.style.fontSize = `${Math.random() * 20 + 10}px`;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100 + 100}vh`;
+                particle.style.animationDuration = `${Math.random() * 3 + 3}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particlesContainer.appendChild(particle);
+            }
+
+            function startTransition() {
+                if (transitionStarted) {
+                    return;
+                }
+
+                transitionStarted = true;
+                mainHeart.classList.remove('animate-pulse-grow');
+                mainHeart.classList.add('is-exploding');
+
+                setTimeout(function() {
+                    splashScreen.classList.add('is-hiding');
+                    setTimeout(function() {
+                        splashScreen.remove();
+                        document.body.classList.remove('splash-active');
+                    }, 500);
+                }, 900);
+            }
+
+            heartWrapper.addEventListener('click', startTransition);
+            heartWrapper.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    startTransition();
+                }
+            });
+            enterButton.addEventListener('click', startTransition);
+        })();
+    </script>
     <script src="js/script.js"></script>
 </body>
 
